@@ -6,7 +6,7 @@ import { Link, Outlet } from "react-router-dom";
 export function Layout() {
 	return (
 		<>
-			<Navbar>
+			<Navbar className="bg-light">
 				<Container>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
