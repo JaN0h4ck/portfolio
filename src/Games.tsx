@@ -2,6 +2,7 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
+import { ListItem } from "./partials/ListItem";
 
 export function Games() {
 	return (
@@ -19,6 +20,7 @@ export function Games() {
 							<li>Child 3</li>
 						</ul>
 					</Col>
+					<ListItem title="Republic Bread" bulletPoints={["Project", "Project Lead", "etc."]} imgSrc="" />
 					<div>item 2</div>
 					<div>item 3</div>
 				</Row>
