@@ -7,11 +7,11 @@ export function Layout() {
 	return (
 		<>
 			<Navbar className="bg-light">
-				<Container>
+				<Container fluid="md">
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
-					<Navbar.Collapse id="basic-navbar-nav">
-						<Nav className="me-auto">
-							<Navbar.Text className="me-2">
+					<Navbar.Collapse id="basic-navbar-nav" className="d-flex justify-content-center align-items-center">
+						<Nav>
+							<Navbar.Text className="me-3">
 								<Link to="/" className="btn btn-primary">
 									Games
 								</Link>
