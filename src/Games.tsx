@@ -17,7 +17,7 @@ export function Games() {
 							"Game Jam project during Brackeys Game Jam 2023.1",
 							"My Role: Programmer, QA and Integration Management",
 						]}
-						lastChild={
+						children={
 							<a className="btn btn-secondary" href="https://jan0h4ck.itch.io/wickedtd">
 								Try it on itch.io
 							</a>
@@ -30,7 +30,7 @@ export function Games() {
 							"My Role: Project Lead, Integration Management, QA",
 						]}
 						imgSrc="/img/Villa_Final.jpg"
-						lastChild={
+						children={
 							<Link className="btn btn-secondary" to="/rb">
 								Learn More
 							</Link>

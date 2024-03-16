@@ -9,7 +9,7 @@ export function Web() {
 				<ListItem
 					title="This Website!"
 					imgSrc="/assets/react.svg"
-					bulletPoints={["Private Project", "React 🤝 Vite SPA with Bootstrap 5"]}
+					bulletPoints={["Private Project", "Simple React 🤝 Vite SPA with Bootstrap 5"]}
 					lastChild={
 						<li>
 							Check out the Source Code on <a href="https://github.com/jan0h4ck/portfolio">GitHub</a>
