@@ -1,6 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import { ListItem } from "./partials/ListItem";
+import { Link } from "react-router-dom";
 
 export function Games() {
 	return (
@@ -12,11 +13,29 @@ export function Games() {
 					<ListItem
 						title="WickedTD"
 						imgSrc="/img/wickedtd_cropped.png"
-						bulletPoints={["Game Jam Project during Brackey Game Jam 2023.1", "My Role: Programmer, "]}
+						bulletPoints={[
+							"Game Jam project during Brackeys Game Jam 2023.1",
+							"My Role: Programmer, QA and Integration Management",
+						]}
+						lastChild={
+							<a className="btn btn-secondary" href="https://jan0h4ck.itch.io/wickedtd">
+								Try it on itch.io
+							</a>
+						}
 					/>
-					<ListItem title="Republic Bread" bulletPoints={["Project", "Project Lead", "etc."]} imgSrc="" />
-					<div>item 2</div>
-					<div>item 3</div>
+					<ListItem
+						title="Republic Bread"
+						bulletPoints={[
+							"Graded group project as part of my studies",
+							"My Role: Project Lead, Integration Management, QA",
+						]}
+						imgSrc="/img/Villa_Final.jpg"
+						lastChild={
+							<Link className="btn btn-secondary" to="/rb">
+								Learn More
+							</Link>
+						}
+					/>
 				</Col>
 			</Container>
 		</>

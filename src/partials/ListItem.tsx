@@ -5,9 +5,10 @@ type Props = {
 	imgSrc: string;
 	title: string;
 	bulletPoints: Array<string>;
+	lastChild?: React.ReactNode;
 };
 
-export function ListItem({ imgSrc, title, bulletPoints }: Props) {
+export function ListItem({ imgSrc, title, bulletPoints, lastChild }: Props) {
 	return (
 		<Row>
 			<h3>{title}</h3>
@@ -16,6 +17,7 @@ export function ListItem({ imgSrc, title, bulletPoints }: Props) {
 				{bulletPoints.map((point, index) => {
 					return <li key={`${title}-${index}`}>{point}</li>;
 				})}
+				{lastChild}
 			</ul>
 		</Row>
 	);
