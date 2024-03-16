@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Layout } from "./Layout";
 import { Games } from "./Games";
+import { Web } from "./Web";
 
 const router = createBrowserRouter([
 	{
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/web",
-				element: <div>Web</div>,
+				element: <Web />,
 			},
 		],
 	},

@@ -6,9 +6,10 @@ type Props = {
 	title: string;
 	bulletPoints: Array<string>;
 	lastChild?: React.ReactNode;
+	children?: React.ReactNode;
 };
 
-export function ListItem({ imgSrc, title, bulletPoints, lastChild }: Props) {
+export function ListItem({ imgSrc, title, bulletPoints, lastChild, children }: Props) {
 	return (
 		<Row>
 			<h3>{title}</h3>
@@ -19,6 +20,7 @@ export function ListItem({ imgSrc, title, bulletPoints, lastChild }: Props) {
 				})}
 				{lastChild}
 			</ul>
+			{children}
 		</Row>
 	);
 }
