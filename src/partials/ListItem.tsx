@@ -1,5 +1,5 @@
-import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
+import Row from "react-bootstrap/Row";
 
 type Props = {
 	imgSrc: string;
@@ -9,7 +9,7 @@ type Props = {
 
 export function ListItem({ imgSrc, title, bulletPoints }: Props) {
 	return (
-		<Col>
+		<Row>
 			<h3>{title}</h3>
 			{imgSrc === "" ? <div className="placeholder placeholder-lg col-6"></div> : <Image src={imgSrc} fluid></Image>}
 			<ul>
@@ -17,6 +17,6 @@ export function ListItem({ imgSrc, title, bulletPoints }: Props) {
 					return <li key={`${title}-${index}`}>{point}</li>;
 				})}
 			</ul>
-		</Col>
+		</Row>
 	);
 }
