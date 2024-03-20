@@ -26,6 +26,9 @@ function ThemeModeProvider({ children }: Props) {
 			setTheme("dark");
 		}
 	}, []);
+	useEffect(() => {
+		document.documentElement.dataset.bsTheme = theme;
+	}, [theme]);
 
 	return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;
 }
