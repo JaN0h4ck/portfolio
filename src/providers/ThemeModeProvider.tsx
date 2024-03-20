@@ -27,6 +27,19 @@ function ThemeModeProvider({ children }: Props) {
 		}
 	}, []);
 	useEffect(() => {
+		switch (theme) {
+			case "light":
+				document.documentElement.dataset.bsTheme = "light";
+				break;
+			case "dark":
+				document.documentElement.dataset.bsTheme = "dark";
+				break;
+			case "system":
+				if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)
+					document.documentElement.dataset.bsTheme = "dark";
+				else document.documentElement.dataset.bsTheme = "light";
+				break;
+		}
 		document.documentElement.dataset.bsTheme = theme;
 	}, [theme]);
 
