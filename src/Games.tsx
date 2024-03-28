@@ -16,7 +16,7 @@ export function Games() {
 							"Game Jam project during ManaSoup Game Jam 3 in Spring of 2024",
 							"3D Jump and Run Game",
 							"Engine: Godot",
-							"My Role: Programmer (.NET), Movement, Animation State Machine",
+							"My Role: Programmer (.NET), Movement, Pausing, UI, Animation State Machine",
 						]}
 						lastChild={
 							<a className="btn btn-primary mt-3" href="https://jan0h4ck.itch.io/robotsvswrestlers" target="blank">
