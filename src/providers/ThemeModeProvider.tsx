@@ -40,7 +40,6 @@ function ThemeModeProvider({ children }: Props) {
 				else document.documentElement.dataset.bsTheme = "light";
 				break;
 		}
-		document.documentElement.dataset.bsTheme = theme;
 	}, [theme]);
 
 	return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;
