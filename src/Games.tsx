@@ -10,8 +10,8 @@ export function Games() {
 			<Container>
 				<Col>
 					<ListItem
-						title="Robots vs. Wrestler (without Wrestlers)"
-						imgSrc=""
+						title="Robots vs. Wrestlers (without Wrestlers)"
+						imgSrc="/img/robots_env.png"
 						bulletPoints={[
 							"Game Jam project during ManaSoup Game Jam 3 in Spring of 2024",
 							"3D Jump and Run Game",
