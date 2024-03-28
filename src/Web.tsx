@@ -1,15 +1,19 @@
 import Container from "react-bootstrap/Container";
 import { ListItem } from "./partials/ListItem";
+import { useI18n } from "./providers/I18nProvider";
+import * as en from "./texts/web/en.json";
+import * as de from "./texts/web/de.json";
 
 export function Web() {
+	const { lang } = useI18n();
 	return (
 		<>
 			<h1 className="text-center fw-bold mb-4">Web</h1>
 			<Container>
 				<ListItem
-					title="This Website!"
+					title={lang == "en" ? en.portfolio.title : de.portfolio.title}
 					imgSrc=""
-					bulletPoints={["Private Project", "Simple React 🤝 Vite SPA with Bootstrap 5"]}
+					bulletPoints={lang == "en" ? en.portfolio.text : de.portfolio.text}
 					lastChild={
 						<li>
 							Check out the Source Code on <a href="https://github.com/jan0h4ck/portfolio">GitHub</a>
@@ -17,9 +21,9 @@ export function Web() {
 					}
 				/>
 				<ListItem
-					title="Link List"
+					title={lang == "en" ? en.linktree.title : de.linktree.title}
 					imgSrc=""
-					bulletPoints={["Private Project", "HTML, SCSS and some JS", "CD with GitHub Actions"]}
+					bulletPoints={lang == "en" ? en.linktree.text : de.linktree.text}
 				>
 					<span>
 						<a className="btn btn-secondary me-2" href="https://linklist.jan-nothacker.de/">
@@ -31,14 +35,9 @@ export function Web() {
 					</span>
 				</ListItem>
 				<ListItem
-					title="Project at CloudWerkGmbH"
+					title={lang == "en" ? en.cloudwerk.title : de.cloudwerk.title}
 					imgSrc=""
-					bulletPoints={[
-						"Made during an internship as part of my studies",
-						"Not released yet",
-						"Large Scale React SPA for managing Users",
-						"More Infos soon-ish",
-					]}
+					bulletPoints={lang == "en" ? en.cloudwerk.text : de.cloudwerk.text}
 				/>
 			</Container>
 		</>
