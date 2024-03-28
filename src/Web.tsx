@@ -4,7 +4,7 @@ import { ListItem } from "./partials/ListItem";
 export function Web() {
 	return (
 		<>
-			<h1 className="text-center fw-bold">Web</h1>
+			<h1 className="text-center fw-bold mb-4">Web</h1>
 			<Container>
 				<ListItem
 					title="This Website!"
