@@ -8,6 +8,7 @@ export function Games() {
 		<>
 			<h1 className="text-center fw-bold mb-4">Games</h1>
 			<Container>
+				{/* className="d-flex flex-column justify-content-center align-items-center"> */}
 				<Col>
 					<ListItem
 						title="Robots vs. Wrestlers (without Wrestlers)"
@@ -25,9 +26,6 @@ export function Games() {
 						}
 					/>
 				</Col>
-			</Container>
-			<Container>
-				{/* className="d-flex flex-column justify-content-center align-items-center"> */}
 				<Col>
 					<ListItem
 						title="WickedTD"
