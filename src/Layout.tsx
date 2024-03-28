@@ -13,35 +13,36 @@ export function Layout() {
 		<>
 			<Navbar>
 				<Container fluid="md">
+					<Navbar.Brand href="/">Jans Portfolio</Navbar.Brand>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
-					<Navbar.Collapse id="basic-navbar-nav" className="d-flex justify-content-center align-items-center">
-						<Nav>
+					<Navbar.Collapse id="basic-navbar-nav">
+						<Nav className="me-auto">
 							<Navbar.Text className="me-3">
 								<Link to="/">Games</Link>
 							</Navbar.Text>
 							<Navbar.Text>
 								<Link to="web">Web</Link>
 							</Navbar.Text>
-							<NavDropdown title="Theme" id="basic-navbar-theme-select">
-								<NavDropdown.Item onClick={() => setTheme("light")} active={theme === "light"}>
-									{lang == "en" ? "Light" : "Hell"}
-								</NavDropdown.Item>
-								<NavDropdown.Item onClick={() => setTheme("dark")} active={theme === "dark"}>
-									{lang == "en" ? "Dark" : "Dunkel"}
-								</NavDropdown.Item>
-								<NavDropdown.Item onClick={() => setTheme("system")} active={theme === "system"}>
-									System
-								</NavDropdown.Item>
-							</NavDropdown>
-							<NavDropdown title="Language" id="basic-navbar-lang-select">
-								<NavDropdown.Item onClick={() => setLang("en")} active={lang === "en"}>
-									English
-								</NavDropdown.Item>
-								<NavDropdown.Item onClick={() => setLang("de")} active={lang === "de"}>
-									Deutsch
-								</NavDropdown.Item>
-							</NavDropdown>
 						</Nav>
+						<NavDropdown title="Theme" id="basic-navbar-theme-select" className="me-3">
+							<NavDropdown.Item onClick={() => setTheme("light")} active={theme === "light"}>
+								{lang == "en" ? "Light" : "Hell"}
+							</NavDropdown.Item>
+							<NavDropdown.Item onClick={() => setTheme("dark")} active={theme === "dark"}>
+								{lang == "en" ? "Dark" : "Dunkel"}
+							</NavDropdown.Item>
+							<NavDropdown.Item onClick={() => setTheme("system")} active={theme === "system"}>
+								System
+							</NavDropdown.Item>
+						</NavDropdown>
+						<NavDropdown title="Language" id="basic-navbar-lang-select">
+							<NavDropdown.Item onClick={() => setLang("en")} active={lang === "en"}>
+								English
+							</NavDropdown.Item>
+							<NavDropdown.Item onClick={() => setLang("de")} active={lang === "de"}>
+								Deutsch
+							</NavDropdown.Item>
+						</NavDropdown>
 					</Navbar.Collapse>
 				</Container>
 			</Navbar>
