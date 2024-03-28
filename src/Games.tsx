@@ -2,8 +2,12 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import { ListItem } from "./partials/ListItem";
 import { Link } from "react-router-dom";
+import { useI18n } from "./providers/I18nProvider";
+import * as en from "./texts/games/en.json";
+import * as de from "./texts/games/de.json";
 
 export function Games() {
+	const { lang } = useI18n();
 	return (
 		<>
 			<h1 className="text-center fw-bold mb-4">Games</h1>
@@ -13,12 +17,7 @@ export function Games() {
 					<ListItem
 						title="Robots vs. Wrestlers (without Wrestlers)"
 						imgSrc="/img/robots_env.png"
-						bulletPoints={[
-							"Game Jam project during ManaSoup Game Jam 3 in Spring of 2024",
-							"3D Jump and Run Game",
-							"Engine: Godot",
-							"My Role: Programmer (.NET), Movement, Pausing, UI, Animation State Machine",
-						]}
+						bulletPoints={lang == "en" ? en.robots : de.robots}
 						lastChild={
 							<a className="btn btn-primary mt-3" href="https://jan0h4ck.itch.io/robotsvswrestlers" target="blank">
 								Try it on itch.io
@@ -30,12 +29,7 @@ export function Games() {
 					<ListItem
 						title="WickedTD"
 						imgSrc="/img/wickedtd_cropped.png"
-						bulletPoints={[
-							"Game Jam project during Brackeys Game Jam 2023.1",
-							"Tower Defense Game",
-							"Engine: Unity",
-							"My Role: Programmer, QA and Integration Management",
-						]}
+						bulletPoints={lang == "en" ? en.wickedtd : de.wickedtd}
 						lastChild={
 							<a className="btn btn-primary mt-3" href="https://jan0h4ck.itch.io/wickedtd" target="blank">
 								Try it on itch.io
@@ -44,12 +38,7 @@ export function Games() {
 					/>
 					<ListItem
 						title="Republic Bread"
-						bulletPoints={[
-							"Graded group project as part of my studies",
-							"Point & Click Adventure",
-							"Engine: Unity",
-							"My Role: Project Lead, Integration Management, QA",
-						]}
+						bulletPoints={lang == "en" ? en.bread : de.bread}
 						imgSrc="/img/Villa_Final.jpg"
 						lastChild={
 							<Link className="btn btn-primary mt-3" to="/rb">
