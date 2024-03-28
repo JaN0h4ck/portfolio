@@ -6,9 +6,10 @@ type Props = {
 
 type I18nProps = {
 	lang: "en" | "de";
+	setLang: React.Dispatch<React.SetStateAction<"en" | "de">>;
 };
 
-const I18nContext = createContext<I18nProps>({ lang: "en" });
+const I18nContext = createContext<I18nProps>({ lang: "en", setLang: () => {} });
 function I18nProvider({ children }: Props) {
 	const [lang, setLang] = useState<"en" | "de">("en");
 	useEffect(() => {
@@ -18,9 +19,10 @@ function I18nProvider({ children }: Props) {
 		else setLang("en");
 	}, []);
 	useEffect(() => {
-		document.documentElement.lang = lang;
+		if (lang != "en" && lang != "de") document.documentElement.lang = "en";
+		else document.documentElement.lang = lang;
 	}, [lang]);
-	return <I18nContext.Provider value={{ lang }}>{children}</I18nContext.Provider>;
+	return <I18nContext.Provider value={{ lang, setLang }}>{children}</I18nContext.Provider>;
 }
 
 const useI18n = () => useContext(I18nContext);
