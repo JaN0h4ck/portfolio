@@ -8,6 +8,25 @@ export function Games() {
 		<>
 			<h1 className="text-center fw-bold">Games</h1>
 			<Container>
+				<Col>
+					<ListItem
+						title="Robots vs. Wrestler (without Wrestlers)"
+						imgSrc=""
+						bulletPoints={[
+							"Game Jam project during ManaSoup Game Jam 3 in Spring of 2024",
+							"3D Jump and Run Game",
+							"Engine: Godot",
+							"My Role: Programmer (.NET), Movement, Animation State Machine",
+						]}
+						lastChild={
+							<a className="btn btn-secondary" href="https://jan0h4ck.itch.io/robotsvswrestlers" target="blank">
+								Try it on itch.io
+							</a>
+						}
+					/>
+				</Col>
+			</Container>
+			<Container>
 				{/* className="d-flex flex-column justify-content-center align-items-center"> */}
 				<Col>
 					<ListItem
@@ -20,7 +39,7 @@ export function Games() {
 							"My Role: Programmer, QA and Integration Management",
 						]}
 						lastChild={
-							<a className="btn btn-secondary" href="https://jan0h4ck.itch.io/wickedtd">
+							<a className="btn btn-secondary" href="https://jan0h4ck.itch.io/wickedtd" target="blank">
 								Try it on itch.io
 							</a>
 						}
