@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export function Games() {
 	return (
 		<>
-			<h1 className="text-center fw-bold">Games</h1>
+			<h1 className="text-center fw-bold mb-4">Games</h1>
 			<Container>
 				<Col>
 					<ListItem
