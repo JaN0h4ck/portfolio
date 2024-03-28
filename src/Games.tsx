@@ -19,7 +19,7 @@ export function Games() {
 							"My Role: Programmer (.NET), Movement, Animation State Machine",
 						]}
 						lastChild={
-							<a className="btn btn-secondary" href="https://jan0h4ck.itch.io/robotsvswrestlers" target="blank">
+							<a className="btn btn-primary mt-3" href="https://jan0h4ck.itch.io/robotsvswrestlers" target="blank">
 								Try it on itch.io
 							</a>
 						}
@@ -39,7 +39,7 @@ export function Games() {
 							"My Role: Programmer, QA and Integration Management",
 						]}
 						lastChild={
-							<a className="btn btn-secondary" href="https://jan0h4ck.itch.io/wickedtd" target="blank">
+							<a className="btn btn-primary mt-3" href="https://jan0h4ck.itch.io/wickedtd" target="blank">
 								Try it on itch.io
 							</a>
 						}
@@ -54,7 +54,7 @@ export function Games() {
 						]}
 						imgSrc="/img/Villa_Final.jpg"
 						lastChild={
-							<Link className="btn btn-secondary" to="/rb">
+							<Link className="btn btn-primary mt-3" to="/rb">
 								Learn More
 							</Link>
 						}

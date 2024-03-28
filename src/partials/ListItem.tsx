@@ -11,9 +11,9 @@ type Props = {
 
 export function ListItem({ imgSrc, title, bulletPoints, lastChild, children }: Props) {
 	return (
-		<Row>
-			<h3 className="fw-bold">{title}</h3>
-			{imgSrc === "" ? "" : <Image src={imgSrc} fluid></Image>}
+		<Row className="mb-5">
+			<h3 className="fw-bold mb-3">{title}</h3>
+			{imgSrc === "" ? "" : <Image src={imgSrc} className="mb-3" fluid></Image>}
 			<ul>
 				{bulletPoints.map((point, index) => {
 					return <li key={`${title}-${index}`}>{point}</li>;
