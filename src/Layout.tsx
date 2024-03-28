@@ -11,17 +11,23 @@ export function Layout() {
 	const { lang, setLang } = useI18n();
 	return (
 		<>
-			<Navbar className="bg-info mb-5">
+			<Navbar className="bg-info mb-5 text-white">
 				<Container fluid="md">
-					<Navbar.Brand href="/">Jans Portfolio</Navbar.Brand>
+					<Navbar.Brand href="/" className="text-reset">
+						Jans Portfolio
+					</Navbar.Brand>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Nav className="me-auto">
-							<Navbar.Text className="me-3">
-								<Link to="/">Games</Link>
+							<Navbar.Text className="me-3 text-reset">
+								<Link to="/" className="text-reset">
+									Games
+								</Link>
 							</Navbar.Text>
-							<Navbar.Text>
-								<Link to="web">Web</Link>
+							<Navbar.Text className="text-reset">
+								<Link to="web" className="text-reset">
+									Web
+								</Link>
 							</Navbar.Text>
 						</Nav>
 						<NavDropdown title="Theme" id="basic-navbar-theme-select" className="me-3">
