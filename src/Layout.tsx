@@ -35,7 +35,7 @@ export function Layout() {
 								System
 							</NavDropdown.Item>
 						</NavDropdown>
-						<NavDropdown title="Language" id="basic-navbar-lang-select">
+						<NavDropdown title={lang == "en" ? "Language" : "Sprache"} id="basic-navbar-lang-select">
 							<NavDropdown.Item onClick={() => setLang("en")} active={lang === "en"}>
 								English
 							</NavDropdown.Item>
