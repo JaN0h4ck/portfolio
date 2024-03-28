@@ -11,7 +11,7 @@ export function Layout() {
 	const { lang, setLang } = useI18n();
 	return (
 		<>
-			<Navbar>
+			<Navbar className="bg-info">
 				<Container fluid="md">
 					<Navbar.Brand href="/">Jans Portfolio</Navbar.Brand>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
