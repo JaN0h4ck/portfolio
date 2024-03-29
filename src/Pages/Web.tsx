@@ -3,6 +3,7 @@ import { ListItem } from "../partials/ListItem";
 import { useI18n } from "../providers/I18nProvider";
 import * as en from "../assets/texts/web/en.json";
 import * as de from "../assets/texts/web/de.json";
+import linktreeImgUrl from "../assets/img/linktree.png";
 import { ExternalLink } from "../partials/ExternalLink";
 import { useTheme } from "../providers/ThemeModeProvider";
 
@@ -31,7 +32,7 @@ export default function Web() {
 				/>
 				<ListItem
 					title={lang == "en" ? en.linktree.title : de.linktree.title}
-					imgSrc=""
+					imgSrc={linktreeImgUrl}
 					bulletPoints={lang == "en" ? en.linktree.text : de.linktree.text}
 				>
 					<span>
