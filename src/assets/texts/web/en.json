@@ -1,0 +1,17 @@
+{
+	"portfolio": {
+		"title": "This Website!",
+		"text": ["Private Project", "Simple React 🤝 Vite SPA with Bootstrap 5.3"],
+		"lastChild": "Check out the Source Code on "
+	},
+	"linktree": { "title": "Link List", "text": ["Private Project", "HTML, SCSS and some JS", "CD with GitHub Actions"] },
+	"cloudwerk": {
+		"title": "Project at CloudWerkGmbH",
+		"text": [
+			"Made during an internship as part of my studies",
+			"Not released yet",
+			"Large Scale React SPA for managing Users",
+			"More Infos soon-ish"
+		]
+	}
+}
