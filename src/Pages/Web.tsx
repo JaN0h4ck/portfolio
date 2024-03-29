@@ -3,9 +3,12 @@ import { ListItem } from "../partials/ListItem";
 import { useI18n } from "../providers/I18nProvider";
 import * as en from "../assets/texts/web/en.json";
 import * as de from "../assets/texts/web/de.json";
+import { ExternalLink } from "../partials/ExternalLink";
+import { useTheme } from "../providers/ThemeModeProvider";
 
 export default function Web() {
 	const { lang } = useI18n();
+	const { theme } = useTheme();
 	return (
 		<>
 			<h1 className="text-center fw-bold mb-4">Web</h1>
@@ -16,7 +19,13 @@ export default function Web() {
 					bulletPoints={lang == "en" ? en.portfolio.text : de.portfolio.text}
 					lastChild={
 						<li>
-							Check out the Source Code on <a href="https://github.com/jan0h4ck/portfolio">GitHub</a>
+							Check out the Source Code on{" "}
+							<ExternalLink
+								text="GitHub"
+								_href="https://github.com/jan0h4ck/portfolio"
+								_className="text-decoration-underline"
+								_style={{ cursor: "pointer", color: theme == "dark" ? "#d0bcfc" : "var(--bs-primary)" }}
+							/>
 						</li>
 					}
 				/>
@@ -29,9 +38,11 @@ export default function Web() {
 						<a className="btn btn-primary me-2" href="https://linklist.jan-nothacker.de/">
 							{lang == "en" ? "Check it out!" : "Hier anschauen!"}
 						</a>
-						<a className="btn btn-secondary" href="https://github.com/jan0h4ck/linklist">
-							Source Code
-						</a>
+						<ExternalLink
+							text="Source Code"
+							_href="https://github.com/jan0h4ck/linklist"
+							_className="btn btn-secondary"
+						/>
 					</span>
 				</ListItem>
 				<ListItem

@@ -4,6 +4,7 @@ import { useI18n } from "../providers/I18nProvider";
 import * as en from "../assets/texts/about/en.json";
 import * as de from "../assets/texts/about/de.json";
 import benniImgUrl from "../assets/img/benni.jpg";
+import { ExternalLink } from "../partials/ExternalLink";
 
 export default function About() {
 	const { lang } = useI18n();
@@ -16,9 +17,11 @@ export default function About() {
 					<h3 className="fw-bold my-3">Jan Nothacker</h3>
 					<p>{lang == "en" ? en.subtitle : de.subtitle}</p>
 					<p>{lang == "en" ? en.paragraph : de.paragraph}</p>
-					<a className="btn btn-primary" href="https://www.linkedin.com/in/jan-robert-nothacker-0a7b43264/">
-						{lang == "en" ? en.btn : de.btn}
-					</a>
+					<ExternalLink
+						text={lang == "en" ? en.btn : de.btn}
+						_className="btn btn-primary"
+						_href="https://www.linkedin.com/in/jan-robert-nothacker-0a7b43264/"
+					/>
 				</div>
 			</Container>
 		</>

@@ -4,18 +4,18 @@ type Props = {
 	text: string;
 	_href: string;
 	_className: string;
+	_style?: React.CSSProperties;
 };
 
-export function ExternalLink({ text, _href, _className }: Props) {
+export function ExternalLink({ text, _href, _className, _style }: Props) {
 	const { setHref: setLink } = useExternalLink();
 
 	function OpenModal() {
 		setLink(_href);
-		console.log("here");
 	}
 	return (
-		<div className={_className} onClick={() => OpenModal()}>
+		<span className={_className} onClick={() => OpenModal()} style={_style}>
 			{text}
-		</div>
+		</span>
 	);
 }

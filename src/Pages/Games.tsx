@@ -31,18 +31,17 @@ export function Games() {
 						}
 					/>
 				</Col>
-				{/* <a className="btn btn-primary mt-3" href="https://jan0h4ck.itch.io/robotsvswrestlers" target="blank">
-								Try it on itch.io
-							</a> */}
 				<Col>
 					<ListItem
 						title="WickedTD"
 						imgSrc={wickedtdImgUrl}
 						bulletPoints={lang == "en" ? en.wickedtd : de.wickedtd}
 						lastChild={
-							<a className="btn btn-primary mt-3" href="https://jan0h4ck.itch.io/wickedtd" target="blank">
-								Try it on itch.io
-							</a>
+							<ExternalLink
+								text="Try it on itch.io"
+								_href="https://jan0h4ck.itch.io/wickedtd"
+								_className="btn btn-primary mt-3"
+							/>
 						}
 					/>
 					<ListItem
