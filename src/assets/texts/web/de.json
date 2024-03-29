@@ -1,7 +1,8 @@
 {
 	"portfolio": {
 		"title": "Diese Webseite!",
-		"text": ["Privates Projekt", "Simples React 🤝 Vite SPA mit Bootstrap 5.3"]
+		"text": ["Privates Projekt", "Simples React 🤝 Vite SPA mit Bootstrap 5.3"],
+		"lastChild": "Source einsehbar auf "
 	},
 	"linktree": {
 		"title": "Link List",
