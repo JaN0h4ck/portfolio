@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import Modal from "react-bootstrap/Modal";
+import { useI18n } from "./I18nProvider";
 
 type Props = {
 	children: React.ReactNode;
@@ -14,6 +15,7 @@ const LinkModalContext = createContext<LinkModalContextProps>({ href: "", setHre
 
 function ExternalModalProvider({ children }: Props) {
 	const [href, setHref] = useState<string>("");
+	const { lang } = useI18n();
 	useEffect(() => {
 		console.log("href: " + href);
 	}, [href]);
@@ -25,18 +27,23 @@ function ExternalModalProvider({ children }: Props) {
 		<LinkModalContext.Provider value={{ href, setHref }}>
 			<Modal show={href != ""} onHide={handleClose}>
 				<Modal.Header closeButton>
-					<Modal.Title>Warning</Modal.Title>
+					<Modal.Title>{lang == "en" ? "Warning" : "Achtung"}</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
-					<p>The Link you clicked leads to an external website: "{href}"</p>
-					<p className="fw-bold">Continue?</p>
+					<p>
+						{lang == "en"
+							? " The Link you clicked leads to an external website:"
+							: "Der Link, den Sie aufgerufen haben, führt zu einer externen Webseite:"}
+					</p>
+					<p className="fw-bold">{href}</p>
+					<p className="fw-bold">{lang == "en" ? "Continue?" : "Fortfahren?"}</p>
 				</Modal.Body>
 				<Modal.Footer>
 					<button className="btn btn-danger" onClick={handleClose}>
-						Cancel
+						{lang == "en" ? "Cancel" : "Abbrechen"}
 					</button>
 					<a className="btn btn-success" href={href}>
-						Continue
+						{lang == "en" ? "Continue" : "Fortfahren"}
 					</a>
 				</Modal.Footer>
 			</Modal>
