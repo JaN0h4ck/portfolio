@@ -5,7 +5,7 @@ import * as en from "../assets/texts/about/en.json";
 import * as de from "../assets/texts/about/de.json";
 import benniImgUrl from "../assets/img/benni.jpg";
 
-export function About() {
+export default function About() {
 	const { lang } = useI18n();
 	return (
 		<>
