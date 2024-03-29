@@ -4,7 +4,7 @@ import { useI18n } from "../providers/I18nProvider";
 import * as en from "../assets/texts/web/en.json";
 import * as de from "../assets/texts/web/de.json";
 
-export function Web() {
+export default function Web() {
 	const { lang } = useI18n();
 	return (
 		<>

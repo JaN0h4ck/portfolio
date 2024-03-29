@@ -1,8 +1,11 @@
+import { lazy } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Layout } from "./Layout";
 import { Games } from "./Pages/Games";
-import { Web } from "./Pages/Web";
-import { About } from "./Pages/About";
+import { SuspensedView } from "./partials/SuspensedView";
+
+const Web = lazy(() => import("./Pages/Web"));
+const About = lazy(() => import("./Pages/About"));
 
 const router = createBrowserRouter([
 	{
@@ -15,11 +18,19 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/web",
-				element: <Web />,
+				element: (
+					<SuspensedView>
+						<Web />
+					</SuspensedView>
+				),
 			},
 			{
 				path: "/about",
-				element: <About />,
+				element: (
+					<SuspensedView>
+						<About />
+					</SuspensedView>
+				),
 			},
 		],
 	},
