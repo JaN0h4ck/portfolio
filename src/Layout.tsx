@@ -24,9 +24,14 @@ export function Layout() {
 									Games
 								</Link>
 							</Navbar.Text>
-							<Navbar.Text className="text-reset">
+							<Navbar.Text className="me-3 text-reset">
 								<Link to="web" className="text-reset">
 									Web
+								</Link>
+							</Navbar.Text>
+							<Navbar.Text className="text-reset">
+								<Link to="about" className="text-reset">
+									{lang == "en" ? "About" : "Über"}
 								</Link>
 							</Navbar.Text>
 						</Nav>
