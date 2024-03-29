@@ -11,7 +11,7 @@ export function Layout() {
 	const { lang, setLang } = useI18n();
 	return (
 		<>
-			<Navbar className="bg-primary mb-5 text-white">
+			<Navbar className="bg-primary mb-5 text-white" expand="md">
 				<Container fluid="md">
 					<Navbar.Brand href="/" className="text-reset">
 						Jans Portfolio
@@ -35,7 +35,7 @@ export function Layout() {
 								</Link>
 							</Navbar.Text>
 						</Nav>
-						<NavDropdown title="Theme" id="basic-navbar-theme-select" className="me-3">
+						<NavDropdown title="Theme" id="basic-navbar-theme-select" className="me-3 my-2">
 							<NavDropdown.Item onClick={() => setTheme("light")} active={theme === "light"}>
 								{lang == "en" ? "Light" : "Hell"}
 							</NavDropdown.Item>
@@ -46,7 +46,7 @@ export function Layout() {
 								System
 							</NavDropdown.Item>
 						</NavDropdown>
-						<NavDropdown title={lang == "en" ? "Language" : "Sprache"} id="basic-navbar-lang-select">
+						<NavDropdown title={lang == "en" ? "Language" : "Sprache"} id="basic-navbar-lang-select" className="my-2">
 							<NavDropdown.Item onClick={() => setLang("en")} active={lang === "en"}>
 								English
 							</NavDropdown.Item>
