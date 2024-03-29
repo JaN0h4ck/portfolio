@@ -1,0 +1,29 @@
+{
+	"robots": {
+		"texts": [
+			"Game Jam Projekt während des ManaSoup Game Jam 3 im Frühling 2024",
+			"3D Jump and Run",
+			"Engine: Godot",
+			"Meine Rollen: Programmieren (.NET), Bewegung, Pausieren, UI, State Machine für Animationen"
+		],
+		"buttonTexts": ["Ausprobieren auf itch.io"]
+	},
+	"wickedtd": {
+		"texts": [
+			"Game Jam Projekt während Brackeys Game Jam 2023.1",
+			"Tower Defense",
+			"Engine: Unity",
+			"Meine Rollen: Programmieren, QA und Integrations Management"
+		],
+		"buttonTexts": ["Ausprobieren auf itch.io"]
+	},
+	"bread": {
+		"texts": [
+			"Benotetes Gruppenprojekt im Rahmen des Studiums",
+			"Point & Click Adventure",
+			"Engine: Unity",
+			"Meine Rollen: Projektleitung & Management, Programmierung (Dialogsystem, Sounds), Writing, Modellierung, Lighting, Integrations Management, QA"
+		],
+		"buttonTexts": ["Mehr erfahren"]
+	}
+}
