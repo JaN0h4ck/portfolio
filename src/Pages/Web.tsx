@@ -19,7 +19,7 @@ export default function Web() {
 					bulletPoints={lang == "en" ? en.portfolio.text : de.portfolio.text}
 					lastChild={
 						<li>
-							Check out the Source Code on{" "}
+							{lang == "en" ? en.portfolio.lastChild : de.portfolio.lastChild}
 							<ExternalLink
 								text="GitHub"
 								_href="https://github.com/jan0h4ck/portfolio"
