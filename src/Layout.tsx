@@ -53,6 +53,7 @@ export function Layout() {
 				</Container>
 			</Navbar>
 			<Outlet />
+			<footer className="text-center my-3">&copy; 2024 Jan Nothacker</footer>
 		</>
 	);
 }
