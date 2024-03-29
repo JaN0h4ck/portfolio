@@ -26,8 +26,8 @@ export function Web() {
 					bulletPoints={lang == "en" ? en.linktree.text : de.linktree.text}
 				>
 					<span>
-						<a className="btn btn-secondary me-2" href="https://linklist.jan-nothacker.de/">
-							Check it out!
+						<a className="btn btn-primary me-2" href="https://linklist.jan-nothacker.de/">
+							{lang == "en" ? "Check it out!" : "Hier anschauen!"}
 						</a>
 						<a className="btn btn-secondary" href="https://github.com/jan0h4ck/linklist">
 							Source Code
