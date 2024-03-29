@@ -12,7 +12,6 @@ const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <Layout />,
-		errorElement: <Error404 />,
 		children: [
 			{
 				index: true,
@@ -33,6 +32,10 @@ const router = createBrowserRouter([
 						<About />
 					</SuspensedView>
 				),
+			},
+			{
+				path: "*",
+				element: <Error404 />,
 			},
 		],
 	},
