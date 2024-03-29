@@ -1,8 +1,8 @@
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import { useI18n } from "../providers/I18nProvider";
-import * as en from "../texts/about/en.json";
-import * as de from "../texts/about/de.json";
+import * as en from "../assets/texts/about/en.json";
+import * as de from "../assets/texts/about/de.json";
 import benniImgUrl from "../assets/img/benni.jpg";
 
 export function About() {
