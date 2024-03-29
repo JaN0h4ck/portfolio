@@ -11,7 +11,7 @@ export function Layout() {
 	const { lang, setLang } = useI18n();
 	return (
 		<>
-			<Navbar className="bg-info mb-5 text-white">
+			<Navbar className="bg-primary mb-5 text-white">
 				<Container fluid="md">
 					<Navbar.Brand href="/" className="text-reset">
 						Jans Portfolio
