@@ -1,20 +1,29 @@
 {
-	"robots": [
-		"Game Jam project during ManaSoup Game Jam 3 in Spring of 2024",
-		"3D Jump and Run Game",
-		"Engine: Godot",
-		"My Role: Programmer (.NET), Movement, Pausing, UI, Animation State Machine"
-	],
-	"wickedtd": [
-		"Game Jam project during Brackeys Game Jam 2023.1",
-		"Tower Defense Game",
-		"Engine: Unity",
-		"My Role: Programmer, QA and Integration Management"
-	],
-	"bread": [
-		"Graded group project as part of my studies",
-		"Point & Click Adventure",
-		"Engine: Unity",
-		"My Role: Project Lead, Integration Management, QA"
-	]
+	"robots": {
+		"texts": [
+			"Game Jam project during ManaSoup Game Jam 3 in Spring of 2024",
+			"3D Jump and Run Game",
+			"Engine: Godot",
+			"My Role: Programmer (.NET), Movement, Pausing, UI, Animation State Machine"
+		],
+		"buttonTexts": ["Try it on itch.io"]
+	},
+	"wickedtd": {
+		"texts": [
+			"Game Jam project during Brackeys Game Jam 2023.1",
+			"Tower Defense Game",
+			"Engine: Unity",
+			"My Role: Programmer, QA and Integration Management"
+		],
+		"buttonTexts": ["Try it on itch.io"]
+	},
+	"bread": {
+		"texts": [
+			"Graded group project as part of my studies",
+			"Point & Click Adventure",
+			"Engine: Unity",
+			"My Role: Project Lead, Integration Management, QA"
+		],
+		"buttonTexts": ["Learn More"]
+	}
 }

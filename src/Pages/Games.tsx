@@ -16,15 +16,14 @@ export function Games() {
 		<>
 			<h1 className="text-center fw-bold mb-4">Games</h1>
 			<Container>
-				{/* className="d-flex flex-column justify-content-center align-items-center"> */}
 				<Col>
 					<ListItem
 						title="Robots vs. Wrestlers (without Wrestlers)"
 						imgSrc={robotsImgUrl}
-						bulletPoints={lang == "en" ? en.robots : de.robots}
+						bulletPoints={lang == "en" ? en.robots.texts : de.robots.texts}
 						lastChild={
 							<ExternalLink
-								text="Try it on itch.io"
+								text={lang == "en" ? en.robots.buttonTexts[0] : de.robots.buttonTexts[0]}
 								_href="https://jan0h4ck.itch.io/robotsvswrestlers"
 								_className="btn btn-primary mt-3"
 							/>
@@ -35,10 +34,10 @@ export function Games() {
 					<ListItem
 						title="WickedTD"
 						imgSrc={wickedtdImgUrl}
-						bulletPoints={lang == "en" ? en.wickedtd : de.wickedtd}
+						bulletPoints={lang == "en" ? en.wickedtd.texts : de.wickedtd.texts}
 						lastChild={
 							<ExternalLink
-								text="Try it on itch.io"
+								text={lang == "en" ? en.wickedtd.buttonTexts[0] : de.wickedtd.buttonTexts[0]}
 								_href="https://jan0h4ck.itch.io/wickedtd"
 								_className="btn btn-primary mt-3"
 							/>
@@ -46,11 +45,11 @@ export function Games() {
 					/>
 					<ListItem
 						title="Republic Bread"
-						bulletPoints={lang == "en" ? en.bread : de.bread}
+						bulletPoints={lang == "en" ? en.bread.texts : de.bread.texts}
 						imgSrc={breadImgUrl}
 						lastChild={
 							<Link className="btn btn-primary mt-3" to="/rb">
-								Learn More
+								{lang == "en" ? en.bread.buttonTexts[0] : de.bread.buttonTexts[0]}
 							</Link>
 						}
 					/>
