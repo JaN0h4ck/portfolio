@@ -1,8 +1,8 @@
 import Container from "react-bootstrap/Container";
-import { ListItem } from "./partials/ListItem";
-import { useI18n } from "./providers/I18nProvider";
-import * as en from "./texts/web/en.json";
-import * as de from "./texts/web/de.json";
+import { ListItem } from "../partials/ListItem";
+import { useI18n } from "../providers/I18nProvider";
+import * as en from "../texts/web/en.json";
+import * as de from "../texts/web/de.json";
 
 export function Web() {
 	const { lang } = useI18n();

@@ -1,10 +1,10 @@
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
-import { ListItem } from "./partials/ListItem";
+import { ListItem } from "../partials/ListItem";
 import { Link } from "react-router-dom";
-import { useI18n } from "./providers/I18nProvider";
-import * as en from "./texts/games/en.json";
-import * as de from "./texts/games/de.json";
+import { useI18n } from "../providers/I18nProvider";
+import * as en from "../texts/games/en.json";
+import * as de from "../texts/games/de.json";
 
 export function Games() {
 	const { lang } = useI18n();
