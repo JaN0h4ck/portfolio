@@ -8,6 +8,7 @@ import * as de from "../assets/texts/games/de.json";
 import robotsImgUrl from "/src/assets/img/robots_env.png";
 import wickedtdImgUrl from "/src/assets/img/wickedtd_cropped.png";
 import breadImgUrl from "/src/assets/img/Villa_Final.jpg";
+import { ExternalLink } from "../partials/ExternalLink";
 
 export function Games() {
 	const { lang } = useI18n();
@@ -22,12 +23,17 @@ export function Games() {
 						imgSrc={robotsImgUrl}
 						bulletPoints={lang == "en" ? en.robots : de.robots}
 						lastChild={
-							<a className="btn btn-primary mt-3" href="https://jan0h4ck.itch.io/robotsvswrestlers" target="blank">
-								Try it on itch.io
-							</a>
+							<ExternalLink
+								text="Try it on itch.io"
+								_href="https://jan0h4ck.itch.io/robotsvswrestlers"
+								_className="btn btn-primary mt-3"
+							/>
 						}
 					/>
 				</Col>
+				{/* <a className="btn btn-primary mt-3" href="https://jan0h4ck.itch.io/robotsvswrestlers" target="blank">
+								Try it on itch.io
+							</a> */}
 				<Col>
 					<ListItem
 						title="WickedTD"
