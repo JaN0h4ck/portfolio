@@ -34,6 +34,7 @@ export default function Web() {
 					title={lang == "en" ? en.linktree.title : de.linktree.title}
 					imgSrc={linktreeImgUrl}
 					bulletPoints={lang == "en" ? en.linktree.text : de.linktree.text}
+					href="https://linklist.jan-nothacker.de/"
 				>
 					<span>
 						<a className="btn btn-primary me-2" href="https://linklist.jan-nothacker.de/">
