@@ -1,7 +1,6 @@
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import { ListItem } from "../partials/ListItem";
-import { Link } from "react-router-dom";
 import { useI18n } from "../providers/I18nProvider";
 import * as en from "../assets/texts/games/en.json";
 import * as de from "../assets/texts/games/de.json";
@@ -48,9 +47,11 @@ export function Games() {
 						bulletPoints={lang == "en" ? en.bread.texts : de.bread.texts}
 						imgSrc={breadImgUrl}
 						lastChild={
-							<Link className="btn btn-primary mt-3" to="/rb">
-								{lang == "en" ? en.bread.buttonTexts[0] : de.bread.buttonTexts[0]}
-							</Link>
+							<ExternalLink
+								text={lang == "en" ? en.bread.buttonTexts[0] : de.bread.buttonTexts[0]}
+								_href="https://www.hs-kempten.de/fakultaet-informatik/zentrale-einrichtungen/computerspiel-zentrum-games/projekt/republic-bread-2049"
+								_className="btn btn-primary mt-3"
+							/>
 						}
 					/>
 				</Col>
