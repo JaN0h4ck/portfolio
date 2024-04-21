@@ -7,13 +7,22 @@ type Props = {
 	bulletPoints: Array<string>;
 	lastChild?: React.ReactNode;
 	children?: React.ReactNode;
+	href?: string;
 };
 
-export function ListItem({ imgSrc, title, bulletPoints, lastChild, children }: Props) {
+export function ListItem({ imgSrc, title, bulletPoints, lastChild, children, href }: Props) {
 	return (
 		<Row className="mb-5">
 			<h3 className="fw-bold mb-3">{title}</h3>
-			{imgSrc === "" ? "" : <Image src={imgSrc} className="mb-3" fluid></Image>}
+			{imgSrc === "" ? (
+				""
+			) : href == undefined ? (
+				<Image src={imgSrc} className="mb-3" fluid></Image>
+			) : (
+				<a href={href}>
+					<Image src={imgSrc} className="mb-3" fluid></Image>
+				</a>
+			)}
 			<ul className="mx-3">
 				{bulletPoints.map((point, index) => {
 					return <li key={`${title}-${index}`}>{point}</li>;
