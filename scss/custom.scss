@@ -14,3 +14,14 @@ $dark: #79747e;
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
+[data-bs-theme=dark] .carousel {
+    .carousel-control-prev-icon {
+        filter: none !important;
+    }
+    .carousel-control-next-icon {
+        filter: none !important;
+    }
+    button {
+        background-color: #ffffff !important;
+    }
+}
