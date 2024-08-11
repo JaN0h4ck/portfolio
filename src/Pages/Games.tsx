@@ -1,5 +1,6 @@
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
+import Row  from "react-bootstrap/Row";
 import { ListItem } from "../partials/ListItem";
 import { useI18n } from "../providers/I18nProvider";
 import * as en from "../assets/texts/games/en.json";
@@ -7,7 +8,8 @@ import * as de from "../assets/texts/games/de.json";
 import robotsImgUrl from "/src/assets/img/robots_env.png";
 import wickedtdImgUrl from "/src/assets/img/wickedtd_cropped.png";
 import breadImgUrl from "/src/assets/img/Villa_Final.jpg";
-import { ExternalLink } from "../partials/ExternalLink";
+import { ExternalLink } from "../partials/ExternalLink.tsx";
+import { PipeCarousel } from "../partials/PipeCarousel.tsx";
 
 export function Games() {
 	const { lang } = useI18n();
@@ -15,6 +17,12 @@ export function Games() {
 		<>
 			<h1 className="text-center fw-bold mb-4">Games</h1>
 			<Container>
+				<Col>
+					<Row className="mb-5">
+						<h3 className="fw-bold mb-3">Rostige Pipe</h3>
+						<PipeCarousel/>
+					</Row>
+				</Col>
 				<Col>
 					<ListItem
 						title="Robots vs. Wrestlers (without Wrestlers)"

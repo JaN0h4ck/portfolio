@@ -25,5 +25,14 @@
 			"Meine Rollen: Projektleitung & Management, Programmierung (Dialogsystem, Sounds), Writing, Modellierung, Lighting, Integrations Management, QA"
 		],
 		"buttonTexts": ["Mehr erfahren"]
+	},
+	"pipe": {
+		"images": [
+			{"Caption": "Startabschnitt im Tutorial", "alt": "Die Spielfigur steht in einem Lagerraum"},
+			{"Caption": "Der Bosskampf gegen die mechanische Schlange", "alt": "Eine Mechanische Schlange greift die Spielfigur an"},
+			{"Caption": "Sektion aus dem Tutorial", "alt": "Blick nach außen, auf große Felsen, Gebäude und den Ozean"},
+			{"Caption": "Förderbänder und Physikinteraktionen", "alt": "Die Spielfigur steht mit vielen Kisten auf einem Förderband"},
+			{"Caption": "Mechanische Spinnen Gegner", "alt": "Die Spielfigur kämpft gegen mechanische Spinnentiere"}
+		]
 	}
 }

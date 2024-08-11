@@ -25,5 +25,14 @@
 			"My Role: Project Lead, Integration Management, QA"
 		],
 		"buttonTexts": ["Learn More"]
+	},
+	"pipe": {
+		"images": [
+			{"Caption": "Start Section in the Tutorial", "alt": "The player standing a storage room"},
+			{"Caption": "The Bossfight against the mechanical Snake", "alt": "A mechanical snake attacking the player"},
+			{"Caption": "Section from the Tutorial", "alt": "Outside view of the level with lage boulders, buildings and an ocean"},
+			{"Caption": "Conveyor Belts and physics interactions", "alt": "The player and a lot of crates standing on a conveyor belt"},
+			{"Caption": "Mechanical Spider Enemies", "alt": "The player fighting a bunch of mechanical spiders"}
+		]
 	}
 }
