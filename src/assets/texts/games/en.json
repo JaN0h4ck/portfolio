@@ -33,6 +33,13 @@
 			{"Caption": "Section from the Tutorial", "alt": "Outside view of the level with lage boulders, buildings and an ocean"},
 			{"Caption": "Conveyor Belts and physics interactions", "alt": "The player and a lot of crates standing on a conveyor belt"},
 			{"Caption": "Mechanical Spider Enemies", "alt": "The player fighting a bunch of mechanical spiders"}
+		],
+		"texts": [
+			"Graded group project as part of my studies",
+			"3D Parkour game in a Steampunk Setting",
+			"Engine: Godot",
+			"Programming Languages: C# and gdscript",
+			"My Roles: Programming: Movement, Ziplines, Checkpoints, Damage System, Water Shader, UI (Partially). Desining and creating the entire Tutorial."
 		]
 	}
 }

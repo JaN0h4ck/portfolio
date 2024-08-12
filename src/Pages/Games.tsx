@@ -10,6 +10,7 @@ import wickedtdImgUrl from "/src/assets/img/wickedtd_cropped.png";
 import breadImgUrl from "/src/assets/img/Villa_Final.jpg";
 import { ExternalLink } from "../partials/ExternalLink.tsx";
 import { PipeCarousel } from "../partials/PipeCarousel.tsx";
+import { BulletPoints } from "../partials/BulletPoints.tsx";
 
 export function Games() {
 	const { lang } = useI18n();
@@ -21,6 +22,7 @@ export function Games() {
 					<Row className="mb-5">
 						<h3 className="fw-bold mb-3">Rostige Pipe</h3>
 						<PipeCarousel/>
+						<BulletPoints bulletPoints={lang == "en" ? en.pipe.texts : de.pipe.texts}/>
 					</Row>
 				</Col>
 				<Col>
