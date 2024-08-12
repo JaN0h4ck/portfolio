@@ -12,7 +12,7 @@ type Props = {
 
 export function ListItem({ imgSrc, title, bulletPoints, lastChild, children, href }: Props) {
 	return (
-		<Row className="mb-5">
+		<Row>
 			<h3 className="fw-bold mb-3">{title}</h3>
 			{imgSrc === "" ? (
 				""
