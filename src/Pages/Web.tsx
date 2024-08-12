@@ -4,12 +4,9 @@ import { useI18n } from "../providers/I18nProvider";
 import * as en from "../assets/texts/web/en.json";
 import * as de from "../assets/texts/web/de.json";
 import linktreeImgUrl from "../assets/img/linktree.png";
-import { ExternalLink } from "../partials/ExternalLink";
-import { useTheme } from "../providers/ThemeModeProvider";
 
 export default function Web() {
 	const { lang } = useI18n();
-	const { theme } = useTheme();
 	return (
 		<>
 			<h1 className="text-center fw-bold mb-4">Web</h1>
@@ -21,12 +18,7 @@ export default function Web() {
 					lastChild={
 						<li>
 							{lang == "en" ? en.portfolio.lastChild : de.portfolio.lastChild}
-							<ExternalLink
-								text="GitHub"
-								_href="https://github.com/jan0h4ck/portfolio"
-								_className="text-decoration-underline"
-								_style={{ cursor: "pointer", color: theme == "dark" ? "#d0bcfc" : "var(--bs-primary)" }}
-							/>
+							<a target="_blank" href="https://github.com/jan0h4ck/portfolio">Github</a>
 						</li>
 					}
 				/>
@@ -40,11 +32,7 @@ export default function Web() {
 						<a className="btn btn-primary me-2" href="https://linklist.jan-nothacker.de/">
 							{lang == "en" ? "Check it out!" : "Hier anschauen!"}
 						</a>
-						<ExternalLink
-							text="Source Code"
-							_href="https://github.com/jan0h4ck/linklist"
-							_className="btn btn-secondary"
-						/>
+						<a className="btn btn-secondary" target="_blank" href="https://github.com/jan0h4ck/linklist">Source Code (Github)</a>
 					</span>
 				</ListItem>
 				<ListItem
