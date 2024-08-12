@@ -11,6 +11,9 @@ export function Layout() {
 	const { lang, setLang } = useI18n();
 	return (
 		<>
+			<div className="top-background">
+				<div className="pipe-background"></div>
+			</div>
 			<Navbar className="bg-primary mb-5 text-white" expand="md">
 				<Container fluid="md">
 					<Navbar.Brand href="/" className="text-reset">

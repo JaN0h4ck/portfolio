@@ -24,6 +24,23 @@
 			"Engine: Unity",
 			"Meine Rollen: Projektleitung & Management, Programmierung (Dialogsystem, Sounds), Writing, Modellierung, Lighting, Integrations Management, QA"
 		],
-		"buttonTexts": ["Mehr erfahren"]
+		"buttonTexts": ["Mehr erfahren (hs-kempten.de)"]
+	},
+	"pipe": {
+		"images": [
+			{"Caption": "Startabschnitt im Tutorial", "alt": "Die Spielfigur steht in einem Lagerraum"},
+			{"Caption": "Der Bosskampf gegen die mechanische Schlange", "alt": "Eine Mechanische Schlange greift die Spielfigur an"},
+			{"Caption": "Sektion aus dem Tutorial", "alt": "Blick nach außen, auf große Felsen, Gebäude und den Ozean"},
+			{"Caption": "Förderbänder und Physikinteraktionen", "alt": "Die Spielfigur steht mit vielen Kisten auf einem Förderband"},
+			{"Caption": "Mechanische Spinnen Gegner", "alt": "Die Spielfigur kämpft gegen mechanische Spinnentiere"}
+		],
+		"texts": [
+			"Benotetes Gruppenprojekt im Rahmen des Studiums",
+			"3D Parkour Spiel in einem Steampunk Setting",
+			"Engine: Godot",
+			"Programmiersprachen: C# und gdscript",
+			"Meine Rollen: Programmierung: Movement, Ziplines, Checkpoints, Schadenssystem, Wasser Shader, UI (Teilweise). Design und Erstellung des gesamten Tutorials."
+		],
+		"buttonText": "Ausprobieren auf itch.io"
 	}
 }
