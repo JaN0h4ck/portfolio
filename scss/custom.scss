@@ -25,3 +25,50 @@ $dark: #79747e;
         background-color: #ffffff !important;
     }
 }
+
+.top-background {
+    background: radial-gradient(#d0ebff,#c5e7ff);
+    position: fixed;
+    top: 0;
+    height: 100svh;
+    width: 100svw;
+    z-index: -1;
+}
+
+[data-bs-theme=dark] .top-background {
+    background: radial-gradient(#006c96,#004c6a);
+}
+
+[data-bs-theme=dark] .pipe-background {
+    opacity: 0.1;
+}
+
+.pipe-background {
+    background-image: url("/src/assets/img/pipe_pattern.svg");
+    opacity: 0.75;
+    background-size: 10%;
+    animation: pan 180s linear infinite;
+    z-index: 0;
+    position: fixed;
+    top: 0;
+    height: 100svh;
+    width: 100svw;
+}
+
+img {
+    z-index: 1;
+}
+
+ul {
+    z-index: 1;
+}
+
+@keyframes pan {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 0%;
+    }
+}
