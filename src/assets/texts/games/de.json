@@ -40,6 +40,7 @@
 			"Engine: Godot",
 			"Programmiersprachen: C# und gdscript",
 			"Meine Rollen: Programmierung: Movement, Ziplines, Checkpoints, Schadenssystem, Wasser Shader, UI (Teilweise). Design und Erstellung des gesamten Tutorials."
-		]
+		],
+		"buttonText": "Ausprobieren auf itch.io"
 	}
 }

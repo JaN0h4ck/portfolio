@@ -22,7 +22,10 @@ export function Games() {
 					<Row className="mb-5">
 						<h3 className="fw-bold mb-3">Rostige Pipe</h3>
 						<PipeCarousel/>
-						<BulletPoints bulletPoints={lang == "en" ? en.pipe.texts : de.pipe.texts}/>
+						<BulletPoints 
+							bulletPoints={lang == "en" ? en.pipe.texts : de.pipe.texts}
+							lastChild={<span><a target="_blank" href="https://jan0h4ck.itch.io/rostige-pipe" className="btn btn-primary mt-3">{lang == "en" ? en.pipe.buttonText : de.pipe.buttonText}</a></span>}
+						/>
 					</Row>
 				</Col>
 				<Col>
