@@ -11,7 +11,8 @@ export default function Web() {
 		<>
 			<h1 className="text-center fw-bold mb-4">Web</h1>
 			<Container>
-				<ListItem
+				<div className="custom-container mb-5">
+					<ListItem
 					title={lang == "en" ? en.portfolio.title : de.portfolio.title}
 					imgSrc=""
 					bulletPoints={lang == "en" ? en.portfolio.text : de.portfolio.text}
@@ -21,25 +22,30 @@ export default function Web() {
 							<a target="_blank" href="https://github.com/jan0h4ck/portfolio">Github</a>
 						</li>
 					}
-				/>
-				<ListItem
-					title={lang == "en" ? en.linktree.title : de.linktree.title}
-					imgSrc={linktreeImgUrl}
-					bulletPoints={lang == "en" ? en.linktree.text : de.linktree.text}
-					href="https://linklist.jan-nothacker.de/"
-				>
-					<span>
-						<a className="btn btn-primary me-2" href="https://linklist.jan-nothacker.de/">
-							{lang == "en" ? "Check it out!" : "Hier anschauen!"}
-						</a>
-						<a className="btn btn-secondary" target="_blank" href="https://github.com/jan0h4ck/linklist">Source Code (Github)</a>
-					</span>
-				</ListItem>
-				<ListItem
+					/>
+				</div>
+				<div className="custom-container mb-5">
+					<ListItem
+						title={lang == "en" ? en.linktree.title : de.linktree.title}
+						imgSrc={linktreeImgUrl}
+						bulletPoints={lang == "en" ? en.linktree.text : de.linktree.text}
+						href="https://linklist.jan-nothacker.de/"
+						>
+						<span>
+							<a className="btn btn-primary me-2" href="https://linklist.jan-nothacker.de/">
+								{lang == "en" ? "Check it out!" : "Hier anschauen!"}
+							</a>
+							<a className="btn btn-secondary" target="_blank" href="https://github.com/jan0h4ck/linklist">Source Code (Github)</a>
+						</span>
+					</ListItem>
+				</div>
+				<div className="custom-container mb-5">
+					<ListItem
 					title={lang == "en" ? en.cloudwerk.title : de.cloudwerk.title}
 					imgSrc=""
 					bulletPoints={lang == "en" ? en.cloudwerk.text : de.cloudwerk.text}
-				/>
+					/>
+				</div>
 			</Container>
 		</>
 	);
