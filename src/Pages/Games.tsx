@@ -1,6 +1,6 @@
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
-import Row  from "react-bootstrap/Row";
+import Row from "react-bootstrap/Row";
 import { ListItem } from "../partials/ListItem";
 import { useI18n } from "../providers/I18nProvider";
 import * as en from "../assets/texts/games/en.json";
@@ -21,10 +21,16 @@ export function Games() {
 					<Col>
 						<Row>
 							<h3 className="fw-bold mb-3">Rostige Pipe</h3>
-							<PipeCarousel/>
+							<PipeCarousel />
 							<BulletPoints 
 								bulletPoints={lang == "en" ? en.pipe.texts : de.pipe.texts}
-								lastChild={<span><a target="_blank" href="https://jan0h4ck.itch.io/rostige-pipe" className="btn btn-primary mt-3">{lang == "en" ? en.pipe.buttonText : de.pipe.buttonText}</a></span>}
+								lastChild={
+									<span>
+										<a target="_blank" href="https://jan0h4ck.itch.io/rostige-pipe" className="btn btn-primary mt-3">
+											{lang == "en" ? en.pipe.buttonText : de.pipe.buttonText}
+										</a>
+									</span>
+								}
 								/>
 						</Row>
 					</Col>
@@ -36,7 +42,11 @@ export function Games() {
 							imgSrc={robotsImgUrl}
 							bulletPoints={lang == "en" ? en.robots.texts : de.robots.texts}
 							lastChild={
-								<span><a target="_blank" href="https://jan0h4ck.itch.io/robotsvswrestlers" className="btn btn-primary mt-3">{lang == "en" ? en.robots.buttonTexts[0] : de.robots.buttonTexts[0]}</a></span>
+								<span>
+									<a target="_blank" href="https://jan0h4ck.itch.io/robotsvswrestlers" className="btn btn-primary mt-3">
+										{lang == "en" ? en.robots.buttonTexts[0] : de.robots.buttonTexts[0]}
+									</a>
+								</span>
 							}
 						/>
 					</Col>
@@ -48,7 +58,11 @@ export function Games() {
 							imgSrc={wickedtdImgUrl}
 							bulletPoints={lang == "en" ? en.wickedtd.texts : de.wickedtd.texts}
 							lastChild={
-								<span><a target="_blank" href="https://jan0h4ck.itch.io/wickedtd" className="btn btn-primary mt-3">{lang == "en" ? en.wickedtd.buttonTexts[0] : de.wickedtd.buttonTexts[0]}</a></span>
+								<span>
+									<a target="_blank" href="https://jan0h4ck.itch.io/wickedtd" className="btn btn-primary mt-3">
+										{lang == "en" ? en.wickedtd.buttonTexts[0] : de.wickedtd.buttonTexts[0]}
+									</a>
+								</span>
 							}
 						/>
 					</Col>
@@ -60,7 +74,15 @@ export function Games() {
 							bulletPoints={lang == "en" ? en.bread.texts : de.bread.texts}
 							imgSrc={breadImgUrl}
 							lastChild={
-								<span><a target="_blank" href="https://www.hs-kempten.de/fakultaet-informatik/zentrale-einrichtungen/computerspiel-zentrum-games/projekt/republic-bread-2049" className="btn btn-primary mt-3">{lang == "en" ? en.bread.buttonTexts[0] : de.bread.buttonTexts[0]}</a></span>
+								<span>
+									<a
+										target="_blank"
+										href="https://www.hs-kempten.de/fakultaet-informatik/zentrale-einrichtungen/computerspiel-zentrum-games/projekt/republic-bread-2049"
+										className="btn btn-primary mt-3"
+									>
+										{lang == "en" ? en.bread.buttonTexts[0] : de.bread.buttonTexts[0]}
+									</a>
+								</span>
 							}
 						/>
 					</Col>
