@@ -10,6 +10,7 @@ import wickedtdImgUrl from "/src/assets/img/wickedtd_cropped.png";
 import breadImgUrl from "/src/assets/img/Villa_Final.jpg";
 import { PipeCarousel } from "../partials/PipeCarousel.tsx";
 import { BulletPoints } from "../partials/BulletPoints.tsx";
+import { ColdBloodedCarousel } from "../partials/ColdBloodedCarousel.tsx";
 
 export function Games() {
 	const { lang } = useI18n();
@@ -20,9 +21,18 @@ export function Games() {
 				<div className="custom-container mb-5">
 					<Col>
 						<Row>
+							<h3 className="fw-bold mb-3">Cold Blooded 2077</h3>
+							<ColdBloodedCarousel />
+							<BulletPoints bulletPoints={["bla", "bla 2"]}></BulletPoints>
+						</Row>
+					</Col>
+				</div>
+				<div className="custom-container mb-5">
+					<Col>
+						<Row>
 							<h3 className="fw-bold mb-3">Rostige Pipe</h3>
 							<PipeCarousel />
-							<BulletPoints 
+							<BulletPoints
 								bulletPoints={lang == "en" ? en.pipe.texts : de.pipe.texts}
 								lastChild={
 									<span>
@@ -31,7 +41,7 @@ export function Games() {
 										</a>
 									</span>
 								}
-								/>
+							/>
 						</Row>
 					</Col>
 				</div>
