@@ -4,11 +4,10 @@ import * as en from "../assets/texts/games/en.json";
 import * as de from "../assets/texts/games/de.json";
 import { useState } from "react";
 import { useI18n } from "../providers/I18nProvider.tsx";
-import startImgUrl from "/src/assets/img/Pipe/start.webp";
-import snakeImgUrl from "/src/assets/img/Pipe/snake.webp";
-import outsideImgUrl from "/src/assets/img/Pipe/outside.webp";
-import conveyorImgUrl from "/src/assets/img/Pipe/conveyor.webp";
-import spidersImgUrl from "/src/assets/img/Pipe/spiders.webp";
+import startImgUrl from "/src/assets/img/ColdBlooded/TitleScreen.webp";
+import freezeImgUrl from "/src/assets/img/ColdBlooded/freeze.webp";
+import batteryImgUrl from "/src/assets/img/ColdBlooded/battery.webp";
+import floatImgUrl from "/src/assets/img/ColdBlooded/float.webp";
 
 export function ColdBloodedCarousel() {
 	const [index, setIndex] = useState<number>(0);
@@ -27,27 +26,21 @@ export function ColdBloodedCarousel() {
 				</Carousel.Caption>
 			</Carousel.Item>
 			<Carousel.Item>
-				<Image src={snakeImgUrl} fluid alt={lang == "en" ? en.pipe.images[1].alt : de.pipe.images[1].alt} />
+				<Image src={freezeImgUrl} fluid alt={lang == "en" ? en.pipe.images[1].alt : de.pipe.images[1].alt} />
 				<Carousel.Caption>
 					<p className="text-white">{lang == "en" ? en.pipe.images[1].Caption : de.pipe.images[1].Caption}</p>
 				</Carousel.Caption>
 			</Carousel.Item>
 			<Carousel.Item>
-				<Image src={outsideImgUrl} fluid alt={lang == "en" ? en.pipe.images[2].alt : de.pipe.images[2].alt} />
+				<Image src={floatImgUrl} fluid alt={lang == "en" ? en.pipe.images[2].alt : de.pipe.images[2].alt} />
 				<Carousel.Caption>
 					<p className="text-white">{lang == "en" ? en.pipe.images[2].Caption : de.pipe.images[2].Caption}</p>
 				</Carousel.Caption>
 			</Carousel.Item>
 			<Carousel.Item>
-				<Image src={conveyorImgUrl} fluid alt={lang == "en" ? en.pipe.images[3].alt : de.pipe.images[3].alt} />
+				<Image src={batteryImgUrl} fluid alt={lang == "en" ? en.pipe.images[3].alt : de.pipe.images[3].alt} />
 				<Carousel.Caption>
 					<p className="text-white">{lang == "en" ? en.pipe.images[3].Caption : de.pipe.images[3].Caption}</p>
-				</Carousel.Caption>
-			</Carousel.Item>
-			<Carousel.Item>
-				<Image src={spidersImgUrl} fluid alt={lang == "en" ? en.pipe.images[4].alt : de.pipe.images[4].alt} />
-				<Carousel.Caption>
-					<p className="text-white">{lang == "en" ? en.pipe.images[4].Caption : de.pipe.images[4].Caption}</p>
 				</Carousel.Caption>
 			</Carousel.Item>
 		</Carousel>
