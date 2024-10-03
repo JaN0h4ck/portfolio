@@ -23,7 +23,20 @@ export function Games() {
 						<Row>
 							<h3 className="fw-bold mb-3">Cold Blooded 2077</h3>
 							<ColdBloodedCarousel />
-							<BulletPoints bulletPoints={["bla", "bla 2"]}></BulletPoints>
+							<BulletPoints
+								bulletPoints={lang == "en" ? en.coldBlooded.texts : de.coldBlooded.texts}
+								lastChild={
+									<span>
+										<a
+											target="_blank"
+											href="https://jekdersnek.itch.io/cold-blooded-2077"
+											className="btn btn-primary mt-3"
+										>
+											{lang == "en" ? en.coldBlooded.buttonText : de.coldBlooded.buttonText}
+										</a>
+									</span>
+								}
+							></BulletPoints>
 						</Row>
 					</Col>
 				</div>
