@@ -28,11 +28,17 @@
 	},
 	"pipe": {
 		"images": [
-			{"Caption": "Start Section in the Tutorial", "alt": "The player standing a storage room"},
-			{"Caption": "The Bossfight against the mechanical Snake", "alt": "A mechanical snake attacking the player"},
-			{"Caption": "Section from the Tutorial", "alt": "Outside view of the level with lage boulders, buildings and an ocean"},
-			{"Caption": "Conveyor Belts and physics interactions", "alt": "The player and a lot of crates standing on a conveyor belt"},
-			{"Caption": "Mechanical Spider Enemies", "alt": "The player fighting a bunch of mechanical spiders"}
+			{ "Caption": "Start Section in the Tutorial", "alt": "The player standing a storage room" },
+			{ "Caption": "The Bossfight against the mechanical Snake", "alt": "A mechanical snake attacking the player" },
+			{
+				"Caption": "Section from the Tutorial",
+				"alt": "Outside view of the level with lage boulders, buildings and an ocean"
+			},
+			{
+				"Caption": "Conveyor Belts and physics interactions",
+				"alt": "The player and a lot of crates standing on a conveyor belt"
+			},
+			{ "Caption": "Mechanical Spider Enemies", "alt": "The player fighting a bunch of mechanical spiders" }
 		],
 		"texts": [
 			"Graded group project as part of my studies",
@@ -42,5 +48,13 @@
 			"My Roles: Programming: Movement, Ziplines, Checkpoints, Damage System, Water Shader, UI (Partially). Desining and creating the entire Tutorial."
 		],
 		"buttonText": "Try it on itch.io"
+	},
+	"coldBlooded": {
+		"images": [
+			{ "Caption": "", "alt": "A vampire penguin attack a lizard on a oil platform" },
+			{ "Caption": "Freezing an enemy", "alt": "The player penguin freezing a enemy lizard" },
+			{ "Caption": "The flying penguin", "alt": "The vampire pengion flying" },
+			{ "Caption": "Collecting the enemies core", "alt": "A huge battery reading '2077W'" }
+		]
 	}
 }

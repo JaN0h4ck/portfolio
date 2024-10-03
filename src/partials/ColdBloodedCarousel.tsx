@@ -20,27 +20,51 @@ export function ColdBloodedCarousel() {
 	return (
 		<Carousel activeIndex={index} onSelect={handleSelect} className="mb-3" data-bs-theme="light">
 			<Carousel.Item>
-				<Image src={startImgUrl} fluid alt={lang == "en" ? en.pipe.images[0].alt : de.pipe.images[0].alt} />
+				<Image
+					src={startImgUrl}
+					fluid
+					alt={lang == "en" ? en.coldBlooded.images[0].alt : de.coldBlooded.images[0].alt}
+				/>
 				<Carousel.Caption>
-					<p className="text-white">{lang == "en" ? en.pipe.images[0].Caption : de.pipe.images[0].Caption}</p>
+					<p className="text-white">
+						{lang == "en" ? en.coldBlooded.images[0].Caption : de.coldBlooded.images[0].Caption}
+					</p>
 				</Carousel.Caption>
 			</Carousel.Item>
 			<Carousel.Item>
-				<Image src={freezeImgUrl} fluid alt={lang == "en" ? en.pipe.images[1].alt : de.pipe.images[1].alt} />
+				<Image
+					src={freezeImgUrl}
+					fluid
+					alt={lang == "en" ? en.coldBlooded.images[1].alt : de.coldBlooded.images[1].alt}
+				/>
 				<Carousel.Caption>
-					<p className="text-white">{lang == "en" ? en.pipe.images[1].Caption : de.pipe.images[1].Caption}</p>
+					<p className="text-white">
+						{lang == "en" ? en.coldBlooded.images[1].Caption : de.coldBlooded.images[1].Caption}
+					</p>
 				</Carousel.Caption>
 			</Carousel.Item>
 			<Carousel.Item>
-				<Image src={floatImgUrl} fluid alt={lang == "en" ? en.pipe.images[2].alt : de.pipe.images[2].alt} />
+				<Image
+					src={floatImgUrl}
+					fluid
+					alt={lang == "en" ? en.coldBlooded.images[2].alt : de.coldBlooded.images[2].alt}
+				/>
 				<Carousel.Caption>
-					<p className="text-white">{lang == "en" ? en.pipe.images[2].Caption : de.pipe.images[2].Caption}</p>
+					<p className="text-white">
+						{lang == "en" ? en.coldBlooded.images[2].Caption : de.coldBlooded.images[2].Caption}
+					</p>
 				</Carousel.Caption>
 			</Carousel.Item>
 			<Carousel.Item>
-				<Image src={batteryImgUrl} fluid alt={lang == "en" ? en.pipe.images[3].alt : de.pipe.images[3].alt} />
+				<Image
+					src={batteryImgUrl}
+					fluid
+					alt={lang == "en" ? en.coldBlooded.images[3].alt : de.coldBlooded.images[3].alt}
+				/>
 				<Carousel.Caption>
-					<p className="text-white">{lang == "en" ? en.pipe.images[3].Caption : de.pipe.images[3].Caption}</p>
+					<p className="text-white">
+						{lang == "en" ? en.coldBlooded.images[3].Caption : de.coldBlooded.images[3].Caption}
+					</p>
 				</Carousel.Caption>
 			</Carousel.Item>
 		</Carousel>

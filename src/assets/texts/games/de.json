@@ -28,11 +28,17 @@
 	},
 	"pipe": {
 		"images": [
-			{"Caption": "Startabschnitt im Tutorial", "alt": "Die Spielfigur steht in einem Lagerraum"},
-			{"Caption": "Der Bosskampf gegen die mechanische Schlange", "alt": "Eine Mechanische Schlange greift die Spielfigur an"},
-			{"Caption": "Sektion aus dem Tutorial", "alt": "Blick nach außen, auf große Felsen, Gebäude und den Ozean"},
-			{"Caption": "Förderbänder und Physikinteraktionen", "alt": "Die Spielfigur steht mit vielen Kisten auf einem Förderband"},
-			{"Caption": "Mechanische Spinnen Gegner", "alt": "Die Spielfigur kämpft gegen mechanische Spinnentiere"}
+			{ "Caption": "Startabschnitt im Tutorial", "alt": "Die Spielfigur steht in einem Lagerraum" },
+			{
+				"Caption": "Der Bosskampf gegen die mechanische Schlange",
+				"alt": "Eine Mechanische Schlange greift die Spielfigur an"
+			},
+			{ "Caption": "Sektion aus dem Tutorial", "alt": "Blick nach außen, auf große Felsen, Gebäude und den Ozean" },
+			{
+				"Caption": "Förderbänder und Physikinteraktionen",
+				"alt": "Die Spielfigur steht mit vielen Kisten auf einem Förderband"
+			},
+			{ "Caption": "Mechanische Spinnen Gegner", "alt": "Die Spielfigur kämpft gegen mechanische Spinnentiere" }
 		],
 		"texts": [
 			"Benotetes Gruppenprojekt im Rahmen des Studiums",
@@ -42,5 +48,13 @@
 			"Meine Rollen: Programmierung: Movement, Ziplines, Checkpoints, Schadenssystem, Wasser Shader, UI (Teilweise). Design und Erstellung des gesamten Tutorials."
 		],
 		"buttonText": "Ausprobieren auf itch.io"
+	},
+	"coldBlooded": {
+		"images": [
+			{ "Caption": "", "alt": "Ein Vampirpinguin greift eine Eidechse an" },
+			{ "Caption": "Einfrieren eines Gegners", "alt": "Der Pinguin friert eine Eidechse ein" },
+			{ "Caption": "Der fliegende Vampirpinguin", "alt": "Der fliegende Vampirpinguin" },
+			{ "Caption": "Stehlen des Energiekerns der Gegner", "alt": "Ein große Batterie mit der Beschriftung '2077W'" }
+		]
 	}
 }
