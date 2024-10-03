@@ -55,6 +55,14 @@
 			{ "Caption": "Einfrieren eines Gegners", "alt": "Der Pinguin friert eine Eidechse ein" },
 			{ "Caption": "Der fliegende Vampirpinguin", "alt": "Der fliegende Vampirpinguin" },
 			{ "Caption": "Stehlen des Energiekerns der Gegner", "alt": "Ein große Batterie mit der Beschriftung '2077W'" }
-		]
+		],
+		"texts": [
+			"Entstanden währen des AK Gaming e.V. Sommer Game Jam 2024",
+			"2D Jump and Run Spiel",
+			"Story dreht sich um einen Vampirpinguin, der sich mit Gewalt gegen den Klimawandel wehrt",
+			"Egine: Godot, scripting mit gdscript",
+			"Meine Aufgaben: Programmierung von Movement, Kampfsystem und Gegner Verhalten (Limbo AI)"
+		],
+		"buttonText": "Ausprobieren auf itch.io"
 	}
 }
