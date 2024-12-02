@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <label xmlns="http://www.miracle-label.eu/ns/2.0/">
+    <age-declaration>
+      <issuer>
+        <age-issuer>jan-nothacker.de/</age-issuer>
+        <last-change>2024-01-16</last-change>
+        <country>
+          <country-code>all</country-code>
+        </country>
+        <custom></custom>
+      </issuer>
+      <scope>
+        <scope-urls>
+          <scope-url class="web-url">*.jan-nothacker.de/*</scope-url>
+        </scope-urls>
+      </scope>
+      <rating>
+        <age>0</age>
+      </rating>
+    </age-declaration>
+  </label>
