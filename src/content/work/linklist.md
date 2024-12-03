@@ -10,6 +10,7 @@ tags:
   - Hobby Project
   - Dev
 href: https://linklist.jan-nothacker.de/
+btnText: Check it out
 ---
 
 <p>
