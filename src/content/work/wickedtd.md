@@ -9,6 +9,8 @@ tags:
   - GameDev
   - Game Jam
   - Dev
+href: https://jan0h4ck.itch.io/wickedtd
+btnText: Try it on itch.io!
 ---
 
 - Game Jam project during Brackeys Game Jam 2023.1

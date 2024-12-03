@@ -9,6 +9,8 @@ tags:
   - GameDev
   - Game Jam
   - Dev
+href: https://jan0h4ck.itch.io/robotsvswrestlers
+btnText: Try it on itch.io!
 ---
 
 - Game Jam project during ManaSoup Game Jam 3 in Spring of 2024

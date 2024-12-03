@@ -9,6 +9,8 @@ tags:
   - GameDev
   - Game Jam
   - Dev
+href: https://jekdersnek.itch.io/cold-blooded-2077
+btnText: Try it on itch.io!
 ---
 
 - Made during the AK Gaming e.V. Summer Game Jam 2024
