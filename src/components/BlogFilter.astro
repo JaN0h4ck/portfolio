@@ -2,6 +2,29 @@
 const { tag } = Astro.props;
 ---
 
-<button data-type={tag} class="text-primary bg-gray-200 p-2 mx-2" id="blogFilter">
+<button data-type={tag} class="text-primary bg-gray-200 p-2 mx-2 btn-pill" id="blogFilter">
 	{tag}
 </button>
+
+<style>
+	.btn-pill {
+		border: none;
+		border-radius: 9999999px;
+		background-color: var(--accent-regular);
+		font-size: var(--text-base);
+		cursor: pointer;
+		color: #fff;
+		font: var(--font-body);
+
+		padding: 0.5rem 1rem;
+		margin-right: 1rem;
+
+		transition:
+			color var(--theme-transition),
+			background-color var(--theme-transition);
+
+		&:hover {
+			background-color: var(--accent-overlay);
+		}
+	}
+</style>
