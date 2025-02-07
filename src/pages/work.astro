@@ -27,15 +27,9 @@ const uniqueTags = [...new Set(tags)];
 			<div class="flex flex-wrap gap-2 mb-2" id="tags" data-tags={uniqueTags}>
 				<BlogFilter tag="All" />{uniqueTags.map((tag) => <BlogFilter {tag} />)}
 			</div>
-			<Grid variant="offset">
-				{
-					projects.map((project) => (
-						<li>
-							<PortfolioPreview project={project} />
-						</li>
-					))
-				}
-			</Grid>
+			<div class="pictures">
+				{projects.map((project) => <PortfolioPreview project={project} />)}
+			</div>
 		</main>
 		<ContactCTA />
 	</div>
@@ -52,13 +46,15 @@ const uniqueTags = [...new Set(tags)];
 		tags.forEach((t) => {
 			const elementsToHide = document.getElementsByClassName(t) as HTMLCollectionOf<HTMLAnchorElement>;
 			for (let i = 0; i < elementsToHide.length; i++) {
-				elementsToHide[i].style.display = "none";
+				// elementsToHide[i].style.display = "none";
+				elementsToHide[i].classList.add("hidden");
 			}
 		});
 
 		let elementsToShow = document.getElementsByClassName(selectedTag) as HTMLCollectionOf<HTMLAnchorElement>;
 		for (let i = 0; i < elementsToShow.length; i++) {
-			elementsToShow[i].style.display = "grid";
+			// elementsToShow[i].style.display = "grid";
+			elementsToShow[i].classList.remove("hidden");
 		}
 	}
 
@@ -68,3 +64,12 @@ const uniqueTags = [...new Set(tags)];
 		e.addEventListener("click", hideBlogs);
 	});
 </script>
+
+<style>
+	.pictures {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		justify-content: space-between;
+	}
+</style>

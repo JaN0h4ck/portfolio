@@ -274,3 +274,7 @@ h5 {
 		gap: 12rem;
 	}
 }
+
+.hidden {
+	display: none !important;
+}
