@@ -278,3 +278,29 @@ h5 {
 .hidden {
 	display: none !important;
 }
+
+.btn-pill {
+	border: none;
+	border-radius: 9999999px;
+	background-color: var(--accent-regular);
+	font-size: var(--text-base);
+	cursor: pointer;
+	color: #fff;
+	font: var(--font-body);
+
+	padding: 0.5rem 1rem;
+	margin: 0.25rem 1rem;
+
+	transition:
+		color var(--theme-transition),
+		background-color var(--theme-transition);
+
+	&:hover {
+		background-color: var(--accent-overlay);
+	}
+}
+/* @media screen and (max-width: 600px) {
+	.btn-pill {
+		
+	}
+} */
