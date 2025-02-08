@@ -12,4 +12,4 @@ tags:
 ---
 
 My old Portfolio website written in React using Typescript and Bootstrap. With automatic Dark/Light mode and Multi Language Support.
-Check out the <b><a href="https://github.com/JaN0h4ck/portfolio">Source Code</a></b> on Github!
+Check out the <b><a href="https://github.com/JaN0h4ck/portfolio/tree/react-old">Source Code</a></b> on Github!
