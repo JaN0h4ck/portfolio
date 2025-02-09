@@ -1,13 +1,18 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import Icon from "./Icon.astro";
 import LanguagePicker from "./LanguagePicker.astro";
 const currentYear = new Date().getFullYear();
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <footer>
 	<div class="group">
 		<p>
-			Based on the <a href="https://astro.build/themes/details/portfolio/" target="_blank">Astro Portfolio Template</a>
+			{t("footer.basedon")}<a href="https://astro.build/themes/details/portfolio/" target="_blank"
+				>Astro Portfolio Template</a
+			>
 			<Icon icon="rocket-launch" size="1.2em" />
 		</p>
 		<p>&copy; {currentYear} Jan Nothacker</p>

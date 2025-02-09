@@ -1,23 +1,27 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import Icon from "./Icon.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class="box skills">
 	<div class="stack gap-2 lg:gap-4">
 		<Icon icon="gamepad" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Game Dev</h2>
-		<p>Experience with Godot (gdscript & C#) and Unity.</p>
+		<h2>{t("skills.one.title")}</h2>
+		<p>{t("skills.one.descr")}</p>
 	</div>
 	<div class="stack gap-2 lg:gap-4">
 		<Icon icon="atom" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Web Dev</h2>
-		<p>Working as frontend React Dev with TS. As you can see, I also use Astro!</p>
+		<h2>{t("skills.two.title")}</h2>
+		<p>{t("skills.two.descr")}</p>
 	</div>
 	<div class="stack gap-2 lg:gap-4">
 		<Icon icon="git" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Fluent with Git</h2>
+		<h2>{t("skills.three.title")}</h2>
 		<p>
-			Very experienced with Git source control. Did a workshop with fellow students and hosting my own Forgejo instance.
+			{t("skills.three.descr")}
 		</p>
 	</div>
 </section>

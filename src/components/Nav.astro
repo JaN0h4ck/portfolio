@@ -4,10 +4,6 @@ import ThemeToggle from "./ThemeToggle.astro";
 import type { iconPaths } from "./IconPaths";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
-interface Props {
-	lang: string;
-}
-
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const langstr = `/${lang}/`;
