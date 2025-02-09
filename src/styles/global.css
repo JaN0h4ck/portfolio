@@ -332,6 +332,10 @@ h5 {
 		color: var(--gray-200);
 		border-radius: 0.375rem;
 	}
+
+	&.card-grid {
+		max-width: none;
+	}
 }
 
 .card:hover {

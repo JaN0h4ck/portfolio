@@ -3,15 +3,17 @@ import type { CollectionEntry } from "astro:content";
 
 interface Props {
 	project: CollectionEntry<"work">;
+	isGrid?: boolean;
 }
 
 const [lang, ...slugArr] = Astro.props.project.slug.split("/");
 const slug = slugArr.join("/");
 const { data } = Astro.props.project;
+const { isGrid } = Astro.props;
 let tags = data.tags.join(" ");
 ---
 
-<a class=`card All ${tags}` href={slug}>
+<a class=`card All ${tags} ${isGrid ? "card-grid" : ""}` href={slug}>
 	<span class="title">{data.title}</span>
 	<img src={data.img} alt={data.img_alt || ""} loading="lazy" decoding="async" />
 </a>
