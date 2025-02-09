@@ -1,0 +1,29 @@
+---
+import { languages } from "../i18n/ui";
+---
+
+<select id="langpick" class="select">
+	{Object.entries(languages).map(([lang, label]) => <option value={lang}>{label}</option>)}
+</select>
+
+<script>
+	const langpick = document.querySelector<HTMLSelectElement>("#langpick");
+	const rootElem = document.querySelector("html");
+
+	langpick.value = rootElem.lang;
+	langpick.addEventListener("change", (ev) => {
+		window.location.href = `/${ev.target.value}/`;
+	});
+</script>
+
+<style>
+	.select {
+		font: var(--font-body);
+		background-color: var(--accent-regular);
+		border: none;
+		border-radius: 999px;
+		color: #fff;
+
+		padding: 0.5em 0.75em;
+	}
+</style>

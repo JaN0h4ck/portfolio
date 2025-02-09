@@ -1,5 +1,6 @@
 ---
 import Icon from "./Icon.astro";
+import LanguagePicker from "./LanguagePicker.astro";
 const currentYear = new Date().getFullYear();
 ---
 
@@ -10,6 +11,7 @@ const currentYear = new Date().getFullYear();
 			<Icon icon="rocket-launch" size="1.2em" />
 		</p>
 		<p>&copy; {currentYear} Jan Nothacker</p>
+		<LanguagePicker />
 	</div>
 	<p class="socials">
 		<a href="https://github.com/JaN0h4ck"> GitHub</a>
@@ -27,6 +29,7 @@ const currentYear = new Date().getFullYear();
 		text-align: center;
 		color: var(--gray-400);
 		font-size: var(--text-sm);
+		align-items: center;
 	}
 
 	footer a {
@@ -45,6 +48,7 @@ const currentYear = new Date().getFullYear();
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
+		align-items: center;
 	}
 
 	.socials {
