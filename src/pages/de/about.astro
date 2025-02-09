@@ -1,0 +1,121 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import ContactCTA from "../../components/ContactCTA.astro";
+import Hero from "../../components/Hero.astro";
+---
+
+<BaseLayout title="Über mich | Jan Nothacker" description="Über Jan Nothacker">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero title="Über mich" tagline="Danke fürs Vorbeischauen. Unten erfährst du mehr über mich.">
+				<img
+					width="1553"
+					height="873"
+					src="/assets/gdcon.webp"
+					alt="Jan Nothacker steht vor einer Bühne auf der godotcon"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Hintergrund</h2>
+				<div class="content">
+					<p>
+						Mein Herz brennt für Game-Development, deshalb kenne ich mich recht gut mit der Godot Engine aus. Außerdem
+						bin ich auch Erfahrung mit Blender und Unity und habe bereits auch mit Wwise gearbeitet. Meistens
+						programmiere ich in Games, aber habe in der Vergangenheit auch an UI, Leveldesign und Sounddesign
+						gearbeitet.
+					</p>
+					<p>
+						Momentan arbeite ich bei <a href="https://www.cloudwerk.com/" target="_blank">Cloudwerk GmbH</a> als frontend
+						Web Developer. Mein haupsächtlicher Web Tech Stack sind React mit TS, aber ich habe auch gut Erfahrung mit "reinen"
+						JS, CSS und habe für einen Kunden eine <a
+							href="https://github.com/Cloudwerk/neutralinojs-vite-react-ts"
+							target="_blank">Neutralino</a
+						> Applikation gebaut.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Bildung</h2>
+				<div class="content">
+					<p>
+						Momentan studiere ich den Bachelorstudiengang "Informatik - Game Engineering" an der Hochschule Kempten im
+						Allgäu. Vorraussichlich hole ich meinen Abschluss im Sommer 2025. Meine Bachelorarbeit wird über das
+						Erweitern eines GUI für die C++ Game Engine "Vektoria" mithilfe von Dear Imgui sein.
+					</p>
+					<p>Für meine guten Noten und mein ehrenamtliches Engagement bin ich Stipendiat im "Deutschlandstipendium".</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Fähigkeiten</h2>
+				<div class="content">
+					<ul>
+						<li>Programmieren: C++, JS/TS, GDScript, C# (Unity)</li>
+						<li>Tools: Godot, WWise, Blender, Unity</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>

@@ -1,0 +1,17 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+	project: CollectionEntry<"work">;
+}
+
+const [lang, ...slugArr] = Astro.props.project.slug.split("/");
+const slug = slugArr.join("/");
+const { data } = Astro.props.project;
+let tags = data.tags.join(" ");
+---
+
+<a class=`card All ${tags}` href={slug}>
+	<span class="title">{data.title}</span>
+	<img src={data.img} alt={data.img_alt || ""} loading="lazy" decoding="async" />
+</a>
