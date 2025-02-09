@@ -7,10 +7,13 @@ import ContactCTA from "../../components/ContactCTA.astro";
 import PortfolioPreview from "../../components/PortfolioPreview.astro";
 import Hero from "../../components/Hero.astro";
 import BlogFilter from "../../components/BlogFilter.astro";
+import { getLangFromUrl } from "../../i18n/utils";
 
-const projects = (await getCollection("work")).sort(
-	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
-);
+const lang = getLangFromUrl(Astro.url);
+
+const projects = (await getCollection("work"))
+	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+	.filter((value) => value.filePath.includes(`/${lang}/`));
 const tags = projects.flatMap((p) => p.data.tags);
 const uniqueTags = [...new Set(tags)];
 ---

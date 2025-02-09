@@ -12,6 +12,7 @@ import { languages } from "../i18n/ui";
 
 	langpick.value = rootElem.lang;
 	langpick.addEventListener("change", (ev) => {
+		//@ts-expect-error literally has value
 		window.location.href = `/${ev.target.value}/`;
 	});
 </script>
