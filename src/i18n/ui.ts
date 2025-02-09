@@ -13,7 +13,7 @@ export const ui = {
 	},
 	de: {
 		"nav.home": "Startseite",
-		"nav.work": "Arbeit",
+		"nav.work": "Arbeiten",
 		"nav.about": "Über mich",
 	},
 } as const;
