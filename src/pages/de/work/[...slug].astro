@@ -17,10 +17,15 @@ type Props = CollectionEntry<"work">;
 export async function getStaticPaths() {
 	const pages = await getCollection("work");
 
-	const paths = pages.map((page) => {
-		const [lang, ...slug] = page.slug.split("/");
-		return { params: { lang, slug: slug.join("/") || undefined }, props: page };
-	});
+	const paths = pages
+		.filter((page) => {
+			const [lang, ...slug] = page.slug.split("/");
+			return lang === "de";
+		})
+		.map((page) => {
+			const [lang, ...slug] = page.slug.split("/");
+			return { params: { lang, slug: slug.join("/") || undefined }, props: page };
+		});
 	return paths;
 }
 

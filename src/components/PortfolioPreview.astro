@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { getAbsoluteLocaleUrl, getRelativeLocaleUrl } from "astro:i18n";
 
 interface Props {
 	project: CollectionEntry<"work">;
@@ -7,14 +8,13 @@ interface Props {
 }
 
 const [lang, ...slugArr] = Astro.props.project.slug.split("/");
-const prefix = `/${lang}/work/`;
-const slug = prefix + slugArr.join("/");
+const url = getRelativeLocaleUrl(lang, `work/${slugArr.join("/")}`);
 const { data } = Astro.props.project;
 const { isGrid } = Astro.props;
 let tags = data.tags.join(" ");
 ---
 
-<a class=`card All ${tags} ${isGrid ? "card-grid" : ""}` href={slug}>
+<a class=`card All ${tags} ${isGrid ? "card-grid" : ""}` href={url}>
 	<span class="title">{data.title}</span>
 	<img src={data.img} alt={data.img_alt || ""} loading="lazy" decoding="async" />
 </a>
