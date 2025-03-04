@@ -7,7 +7,8 @@ interface Props {
 }
 
 const [lang, ...slugArr] = Astro.props.project.slug.split("/");
-const slug = slugArr.join("/");
+const prefix = `/${lang}/work/`;
+const slug = prefix + slugArr.join("/");
 const { data } = Astro.props.project;
 const { isGrid } = Astro.props;
 let tags = data.tags.join(" ");
