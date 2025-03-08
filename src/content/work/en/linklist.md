@@ -1,7 +1,7 @@
 ---
 title: Simple Linktree Clone
 publishDate: 2024-02-06 00:00:00
-img: /assets/linklist.webp
+img: /src/images/linklist.webp
 img_alt: A website with a list of links.
 description: |
   A simple Linktree clone with plain HTML, CSS and JS.

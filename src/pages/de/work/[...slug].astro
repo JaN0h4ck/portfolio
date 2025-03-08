@@ -8,6 +8,7 @@ import Hero from "../../../components/Hero.astro";
 import Icon from "../../../components/Icon.astro";
 import Pill from "../../../components/Pill.astro";
 import CallToAction from "../../../components/CallToAction.astro";
+import { Image } from "astro:assets";
 
 type Props = CollectionEntry<"work">;
 
@@ -17,10 +18,15 @@ type Props = CollectionEntry<"work">;
 export async function getStaticPaths() {
 	const pages = await getCollection("work");
 
-	const paths = pages.map((page) => {
-		const [lang, ...slug] = page.slug.split("/");
-		return { params: { lang, slug: slug.join("/") || undefined }, props: page };
-	});
+	const paths = pages
+		.filter((page) => {
+			const [lang, ...slug] = page.slug.split("/");
+			return lang === "de";
+		})
+		.map((page) => {
+			const [lang, ...slug] = page.slug.split("/");
+			return { params: { lang, slug: slug.join("/") || undefined }, props: page };
+		});
 	return paths;
 }
 
@@ -46,7 +52,7 @@ const { Content } = await page.render();
 			</header>
 			<main class="wrapper">
 				<div class="stack gap-10 content">
-					{page.data.img && <img src={page.data.img} alt={page.data.img_alt || ""} />}
+					{page.data.img && <Image src={page.data.img} alt={page.data.img_alt || ""} />}
 					<div class="content">
 						<Content />
 						{page.data.href && <CallToAction href={page.data.href}>{page.data.btnText ?? "Try it out"}</CallToAction>}

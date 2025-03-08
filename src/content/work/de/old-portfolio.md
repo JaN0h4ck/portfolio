@@ -1,7 +1,7 @@
 ---
 title: Altes Portfolio
 publishDate: 2024-03-29 00:00:00
-img: /assets/portfolio_old.webp
+img: /src/images/portfolio_old.webp
 img_alt: Eine Webseite mit einer Navbar und einem großem Bild eines Spiels.
 description: |
   Portfolio-Webseite geschrieben in React mit Typescript und Vite.

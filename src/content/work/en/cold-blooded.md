@@ -1,7 +1,7 @@
 ---
 title: "Cold Blooded: 2077"
 publishDate: 2024-09-13 00:00:00
-img: /assets/ColdBlooded/freeze.webp
+img: /src/images/ColdBlooded/freeze.webp
 img_alt: A penguin freezing a lizard with an ice-beam on a oil platform.
 description: |
   Fight climate change... with violence.

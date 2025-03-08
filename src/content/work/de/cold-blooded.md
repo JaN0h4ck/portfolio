@@ -1,7 +1,7 @@
 ---
 title: "Cold Blooded: 2077"
 publishDate: 2024-09-13 00:00:00
-img: /assets/ColdBlooded/freeze.webp
+img: /src/images/ColdBlooded/freeze.webp
 img_alt: Ein Pinguin, der eine Echse mit einem Eisstrahl auf einer Ölbohrplattform einfriert.
 description: |
   Bekämpfe den Klimawandel... mit Gewalt.
