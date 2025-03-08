@@ -1,7 +1,7 @@
 ---
 title: Old Portfolio.
 publishDate: 2024-03-29 00:00:00
-img: /assets/portfolio_old.webp
+img: /src/images/portfolio_old.webp
 img_alt: A website with a navbar and a big picture of a game.
 description: |
   Portfolio website written in React with Typescript.

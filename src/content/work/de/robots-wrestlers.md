@@ -1,7 +1,7 @@
 ---
 title: Robots vs. Wrestlers (without Wrestlers)
 publishDate: 2024-03-24 00:00:00
-img: /assets/robots_env.webp
+img: /src/images/robots_env.webp
 img_alt: Ein Roboter steht vor fliegenden Plattformen.
 description: |
   AAAA

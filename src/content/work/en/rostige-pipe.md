@@ -1,7 +1,7 @@
 ---
 title: Rostige Pipe
 publishDate: 2024-08-04 00:00:00
-img: /assets/Pipe/tower.webp
+img: /src/images/Pipe/tower.webp
 img_alt: A robot standing in front of a huge tower.
 description: |
   Award Winning 😉

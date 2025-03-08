@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import { getAbsoluteLocaleUrl, getRelativeLocaleUrl } from "astro:i18n";
 
@@ -16,5 +17,5 @@ let tags = data.tags.join(" ");
 
 <a class=`card All ${tags} ${isGrid ? "card-grid" : ""}` href={url}>
 	<span class="title">{data.title}</span>
-	<img src={data.img} alt={data.img_alt || ""} loading="lazy" decoding="async" />
+	<Image src={data.img} alt={data.img_alt || ""} loading="lazy" decoding="async" />
 </a>
