@@ -70,14 +70,6 @@
 	--gradient-accent-orange: linear-gradient(150deg, #ca7879, var(--accent-regular), var(--accent-dark));
 	--gradient-stroke: linear-gradient(180deg, var(--gray-900), var(--gray-700));
 
-	/* Shadows */
-	--shadow-sm: 0px 6px 3px rgba(9, 11, 17, 0.01), 0px 4px 2px rgba(9, 11, 17, 0.01), 0px 2px 2px rgba(9, 11, 17, 0.02),
-		0px 0px 1px rgba(9, 11, 17, 0.03);
-	--shadow-md: 0px 28px 11px rgba(9, 11, 17, 0.01), 0px 16px 10px rgba(9, 11, 17, 0.03),
-		0px 7px 7px rgba(9, 11, 17, 0.05), 0px 2px 4px rgba(9, 11, 17, 0.06);
-	--shadow-lg: 0px 62px 25px rgba(9, 11, 17, 0.01), 0px 35px 21px rgba(9, 11, 17, 0.05),
-		0px 16px 16px rgba(9, 11, 17, 0.1), 0px 4px 9px rgba(9, 11, 17, 0.12);
-
 	/* Text Sizes */
 	--text-sm: 0.875rem;
 	--text-base: 1rem;
@@ -127,13 +119,6 @@
 	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 81%);
 	--gradient-accent-orange: linear-gradient(150deg, #ca7879, var(--accent-regular), var(--accent-light));
 	--gradient-stroke: linear-gradient(180deg, var(--gray-600), var(--gray-800));
-
-	--shadow-sm: 0px 6px 3px rgba(255, 255, 255, 0.01), 0px 4px 2px rgba(255, 255, 255, 0.01),
-		0px 2px 2px rgba(255, 255, 255, 0.02), 0px 0px 1px rgba(255, 255, 255, 0.03);
-	--shadow-md: 0px 28px 11px rgba(255, 255, 255, 0.01), 0px 16px 10px rgba(255, 255, 255, 0.03),
-		0px 7px 7px rgba(255, 255, 255, 0.05), 0px 2px 4px rgba(255, 255, 255, 0.06);
-	--shadow-lg: 0px 62px 25px rgba(255, 255, 255, 0.01), 0px 35px 21px rgba(255, 255, 255, 0.05),
-		0px 16px 16px rgba(255, 255, 255, 0.1), 0px 4px 9px rgba(255, 255, 255, 0.12);
 }
 
 html,
@@ -206,6 +191,9 @@ h5 {
 	flex-wrap: wrap;
 }
 
+.justify-content-center {
+	justify-content: center;
+}
 
 .sr-only {
 	position: absolute;
@@ -254,6 +242,10 @@ h5 {
 }
 .gap-48 {
 	gap: 12rem;
+}
+
+.mb-2 {
+	margin-bottom: 2rem;
 }
 
 @media (min-width: 50em) {
@@ -328,12 +320,12 @@ h5 {
 	height: 11rem;
 	background: var(--gradient-subtle);
 	overflow: hidden;
-	box-shadow: var(--shadow-sm);
+	border: 4px inset black;
 	text-decoration: none;
 	font-family: var(--font-brand);
 	font-size: var(--text-lg);
 	font-weight: 500;
-	transition: box-shadow var(--theme-transition);
+	transition: border var(--theme-transition);
 	max-width: 30%;
 
 	& img {
@@ -349,7 +341,7 @@ h5 {
 }
 
 .card:hover {
-	box-shadow: var(--shadow-md);
+	border: 4px inset orange;
 }
 
 @media (min-width: 50em) {
