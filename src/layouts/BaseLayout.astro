@@ -6,7 +6,7 @@
 import MainHead from "../components/MainHead.astro";
 import Footer from "../components/Footer.astro";
 import { getLangFromUrl } from "../i18n/utils";
-import "xp.css/dist/XP.css"
+import "xp.css/dist/XP.css";
 
 interface Props {
 	title?: string | undefined;
@@ -20,7 +20,7 @@ const lang = getLangFromUrl(Astro.url);
 
 <html lang={lang}>
 	<div class="window" style="width: 100svw;">
-		<MainHead title={title} description={description}/>
+		<MainHead title={title} description={description} />
 		<head>
 			<div class="title-bar">
 				<div class="title-bar-text">Jan Nothackers personal Site</div>
@@ -29,15 +29,18 @@ const lang = getLangFromUrl(Astro.url);
 				</div>
 			</div>
 		</head>
-		<body>
-			<div class="window-body">
+		<div class="window-body">
+			<body>
 				<slot />
-
 				<script>
-			// Add “loaded” class once the document has completely loaded.
-			addEventListener("load", () => document.documentElement.classList.add("loaded"));
-		</script>
-			</div>
-		</body>
+					// Add “loaded” class once the document has completely loaded.
+					addEventListener("load", () =>
+						document.documentElement.classList.add("loaded"),
+					);
+				</script>
+			</body>
+			<Footer />
+		</div>
 	</div>
+
 </html>

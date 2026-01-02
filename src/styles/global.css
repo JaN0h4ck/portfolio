@@ -300,6 +300,11 @@ h5 {
 	}
 }
 
+.status-bar-field.socials {
+	display: flex;
+	justify-content: space-around;
+}
+
 .card {
 	display: grid;
 	grid-template: auto 1fr / auto 1fr;
