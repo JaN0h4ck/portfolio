@@ -15,14 +15,14 @@ const { isGrid } = Astro.props;
 let tags = data.tags.join(" ");
 ---
 
-<div class="window">
+<div class=`window griditem All ${tags}`>
 	<div class="title-bar">
 		<div class="title-bar-text">
 			{data.title}.exe
 		</div>
 	</div>
 	<div class="window-body showcase">
-		<a class=`card All ${tags} ${isGrid ? "card-grid" : ""}` href={url}>
+		<a class=`card ${isGrid ? "card-grid" : ""}` href={url}>
 			<Image
 				src={data.img}
 				alt={data.img_alt || ""}
@@ -39,3 +39,26 @@ let tags = data.tags.join(" ");
 		</div>
 	</div>
 </div>
+
+<style>
+	.griditem {
+		width: 450px;
+	}
+
+	@media (max-width: 940px) {
+		.griditem {
+			width: 350px;
+		}
+	}
+
+	@media (max-width: 740px) {
+		.griditem {
+			width: 500px;
+		}
+	}
+	@media (max-width: 550px) {
+		.griditem {
+			width: auto;
+		}
+	}
+</style>

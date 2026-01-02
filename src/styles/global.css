@@ -198,6 +198,14 @@ h5 {
 }
 
 /* Utilities */
+.flex {
+	display: flex;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
 
 .sr-only {
 	position: absolute;

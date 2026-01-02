@@ -5,19 +5,20 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 // Component Imports
-import Grid from "../../components/Grid.astro";
 import PortfolioPreview from "../../components/PortfolioPreview.astro";
 
 // Page section components
 import { getLangFromUrl } from "../../i18n/utils";
+import BlogFilter from "../../components/BlogFilter.astro";
 
 const lang = getLangFromUrl(Astro.url);
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection("work"))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-	.filter((value) => value.filePath.includes(`/${lang}/`))
-	.slice(0, 4);
+	.filter((value) => value.filePath.includes(`/${lang}/`));
+const tags = projects.flatMap((p) => p.data.tags);
+const uniqueTags = [...new Set(tags)];
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
@@ -72,20 +73,29 @@ const projects = (await getCollection("work"))
 					</div>
 				</div>
 				<div class="window-body">
+					<div
+						class="flex flex-wrap gap-2 mb-2"
+						id="tags"
+						data-tags={uniqueTags}
+					>
+						<BlogFilter tag="All" />{
+							uniqueTags.map((tag) => <BlogFilter {tag} />)
+						}
+					</div>
 					<section class="section">
 						<div class="gallery">
-							<Grid variant="offset">
+							{/* <Grid variant="offset">*/}
+							<div id="newthingy">
 								{
 									projects.map((project) => (
-										<li>
-											<PortfolioPreview
-												project={project}
-												isGrid
-											/>
-										</li>
+										<PortfolioPreview
+											project={project}
+											isGrid
+										/>
 									))
 								}
-							</Grid>
+							</div>
+							{/* </Grid>*/}
 						</div>
 					</section>
 				</div>
@@ -94,7 +104,47 @@ const projects = (await getCollection("work"))
 	</div>
 </BaseLayout>
 
+<script>
+	function hideBlogs(evt) {
+		let selectedTag = evt.currentTarget.getAttribute("data-type");
+		let tagElement = document.querySelector<HTMLDivElement>("#tags");
+		let tags = tagElement.dataset.tags.split(",");
+		// tags = tags.split(",");
+		tags.splice(tags.indexOf(selectedTag), 1);
+
+		tags.forEach((t) => {
+			const elementsToHide = document.getElementsByClassName(
+				t,
+			) as HTMLCollectionOf<HTMLAnchorElement>;
+			for (let i = 0; i < elementsToHide.length; i++) {
+				// elementsToHide[i].style.display = "none";
+				elementsToHide[i].classList.add("hidden");
+			}
+		});
+
+		let elementsToShow = document.getElementsByClassName(
+			selectedTag,
+		) as HTMLCollectionOf<HTMLAnchorElement>;
+		for (let i = 0; i < elementsToShow.length; i++) {
+			// elementsToShow[i].style.display = "grid";
+			elementsToShow[i].classList.remove("hidden");
+		}
+	}
+
+	// Event listener for the button click
+	const input = document.querySelectorAll("#blogFilter");
+	input.forEach((e) => {
+		e.addEventListener("click", hideBlogs);
+	});
+</script>
+
 <style>
+	#newthingy {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		justify-content: space-around;
+	}
 	.title {
 		text-align: center;
 	}
