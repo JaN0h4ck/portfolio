@@ -6,7 +6,12 @@ interface Props {
 const { variant } = Astro.props;
 ---
 
-<ul class:list={["grid", { offset: variant === "offset", small: variant === "small" }]}>
+<ul
+	class:list={[
+		"grid",
+		{ offset: variant === "offset", small: variant === "small" },
+	]}
+>
 	<slot />
 </ul>
 
@@ -38,6 +43,7 @@ const { variant } = Astro.props;
 		.grid.offset {
 			--row-offset: 7.5rem;
 			padding-bottom: var(--row-offset);
+			transform: translateY(-4rem);
 		}
 
 		/* Shift first item in each row vertically to create staggered effect. */
