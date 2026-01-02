@@ -5,16 +5,10 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 // Component Imports
-import CallToAction from "../../components/CallToAction.astro";
 import Grid from "../../components/Grid.astro";
-import Hero from "../../components/Hero.astro";
-import Icon from "../../components/Icon.astro";
-import Pill from "../../components/Pill.astro";
 import PortfolioPreview from "../../components/PortfolioPreview.astro";
 
 // Page section components
-import ContactCTA from "../../components/ContactCTA.astro";
-import Skills from "../../components/Skills.astro";
 import { getLangFromUrl } from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
@@ -29,126 +23,151 @@ const projects = (await getCollection("work"))
 // https://docs.astro.build/basics/astro-components/
 ---
 
-<BaseLayout title="Jans personal Site" description="Personal website of Jan Nothacker, only for personal stuff">
-	<div class="stack gap-20 lg:gap-48">
-		<div class="wrapper stack gap-8 lg:gap-20">
-			<header class="hero">
-				<Hero
-					title="Hello, my name is Jan Nothacker"
-					tagline="I am a Web and Game Developer who is currently based in Kempten, Germany."
-					align="start"
-				>
-					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> WebDev</Pill>
-						<Pill><Icon icon="trophy" size="1.33em" /> GameDev</Pill>
-						<Pill><Icon icon="graduation-cap" size="1.33em" /> Scholarship Holder</Pill>
+<BaseLayout
+	title="Jans personal Site"
+	description="Personal website of Jan Nothacker, only for personal stuff"
+>
+	<div class="custom-container">
+		<header>
+			<div class="window">
+				<div class="title-bar">
+					<div class="title-bar-text">Header.exe</div>
+					<div class="title-bar-controls">
+						<button aria-label="Maximize" disabled></button>
+						<button aria-label="Restore" disabled></button>
+						<button aria-label="Close" disabled></button>
 					</div>
-				</Hero>
-
-				<img
-					alt="Jan Nothacker smiling with shell glasses in front of a river"
-					width="480"
-					height="620"
-					src="/assets/portrait.jpg"
-				/>
-			</header>
-
-			<Skills />
-		</div>
-
-		<main class="wrapper stack gap-20 lg:gap-48">
-			<section class="section with-background with-cta">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Selected Work</h3>
-					<p>Take a look below at some of my games from the past few years.</p>
-				</header>
-
-				<div class="gallery">
-					<Grid variant="offset">
-						{
-							projects.map((project) => (
-								<li>
-									<PortfolioPreview project={project} isGrid />
-								</li>
-							))
-						}
-					</Grid>
 				</div>
-
-				<div class="cta">
-					<CallToAction href="work/">
-						View All
-						<Icon icon="arrow-right" size="1.2em" />
-					</CallToAction>
+				<div class="window-body">
+					<h1 class="title">
+						Welcome to <span class="wave-text"
+							><i>m</i><i style="margin-right: 1rem;">y</i><i>s</i
+							><i>i</i><i>t</i><i>e</i></span
+						>
+					</h1>
+					<div class="index-header">
+						<img
+							alt="Jan Nothacker smiling with shell glasses in front of a river"
+							width="240"
+							height="310"
+							src="/assets/portrait.jpg"
+						/>
+						<p>
+							I show my different <b>GameDev</b> and <b>WebDev</b> projects
+							from Uni, Work, Hobbies and GameJams here. I <i
+								>try</i
+							> to update it regularly, but can't always keep up. Anyways:
+							scroll down and enjoy!
+						</p>
+					</div>
 				</div>
-			</section>
-
-			<!-- <section class="section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Mentions</h3>
-					<p>
-						I have been fortunate enough to receive praise for my work in several publications. Take a look below to
-						learn more.
-					</p>
-				</header>
-
-				<div class="gallery">
-					<Grid variant="small">
-						{
-							["Medium", "BuzzFeed", "The Next Web", "awwwards.", "TechCrunch"].map((brand) => (
-								<li class="mention-card">
-									<p>{brand}</p>
-								</li>
-							))
-						}
-					</Grid>
+			</div>
+		</header>
+		<main>
+			<div class="window">
+				<div class="title-bar">
+					<div class="title-bar-text">Projects.exe</div>
+					<div class="title-bar-controls">
+						<button aria-label="Maximize" disabled></button>
+						<button aria-label="Restore" disabled></button>
+						<button aria-label="Close" disabled></button>
+					</div>
 				</div>
-			</section> -->
+				<div class="window-body">
+					<section class="section">
+						<div class="gallery">
+							<Grid variant="offset">
+								{
+									projects.map((project) => (
+										<li>
+											<PortfolioPreview
+												project={project}
+												isGrid
+											/>
+										</li>
+									))
+								}
+							</Grid>
+						</div>
+					</section>
+				</div>
+			</div>
 		</main>
-
-		<ContactCTA />
 	</div>
 </BaseLayout>
 
 <style>
-	.hero {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 2rem;
+	.title {
+		text-align: center;
 	}
 
-	.roles {
-		display: none;
+	.wave-text i {
+		display: inline-block;
+		animation: wave 2s ease-in-out infinite;
 	}
 
-	.hero img {
+	.wave-text i:nth-child(1) {
+		animation-delay: 0s;
+	}
+	.wave-text i:nth-child(2) {
+		animation-delay: 0.2s;
+	}
+	.wave-text i:nth-child(3) {
+		animation-delay: 0.4s;
+	}
+	.wave-text i:nth-child(4) {
+		animation-delay: 0.6s;
+	}
+
+	.wave-text i:nth-child(5) {
+		animation-delay: 0.8s;
+	}
+
+	.wave-text i:nth-child(6) {
+		animation-delay: 1s;
+	}
+
+	@keyframes wave {
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-20px);
+		}
+	}
+
+	header img {
 		aspect-ratio: 5 / 4;
 		object-fit: cover;
 		object-position: top;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
+		border: 6px groove bisque;
 	}
 
 	@media (min-width: 50em) {
-		.hero {
-			display: grid;
-			grid-template-columns: 6fr 4fr;
-			padding-inline: 2.5rem;
-			gap: 3.75rem;
-		}
-
-		.roles {
-			margin-top: 0.5rem;
-			display: flex;
-			gap: 0.5rem;
-		}
-
-		.hero img {
+		header img {
 			aspect-ratio: 3 / 4;
-			border-radius: 4.5rem;
 			object-fit: cover;
 		}
+	}
+
+	.custom-container {
+		margin: 0 auto;
+		max-width: 1024px;
+	}
+
+	.index-header {
+		display: flex;
+		margin: 1rem;
+
+		p {
+			margin-left: 1rem;
+			font-size: 1.5rem;
+		}
+	}
+
+	header {
+		margin-bottom: 1rem;
 	}
 
 	/* ====================================================== */
@@ -156,34 +175,6 @@ const projects = (await getCollection("work"))
 	.section {
 		display: grid;
 		gap: 2rem;
-	}
-
-	.with-background {
-		position: relative;
-	}
-
-	.with-background::before {
-		--hero-bg: var(--bg-image-subtle-2);
-
-		content: "";
-		position: absolute;
-		pointer-events: none;
-		left: 50%;
-		width: 100vw;
-		aspect-ratio: calc(2.25 / var(--bg-scale));
-		top: 0;
-		transform: translateY(-75%) translateX(-50%);
-		background:
-			url("/assets/backgrounds/noise.png") top center/220px repeat,
-			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
-			var(--gray-999);
-		background-blend-mode: overlay, normal, normal, normal;
-		mix-blend-mode: var(--bg-blend-mode);
-		z-index: -1;
-	}
-
-	.with-background.bg-variant::before {
-		--hero-bg: var(--bg-image-subtle-1);
 	}
 
 	.section-header {
@@ -205,10 +196,6 @@ const projects = (await getCollection("work"))
 			gap: 5rem;
 		}
 
-		.section.with-cta {
-			grid-template-areas: "header header header cta" "gallery gallery gallery gallery";
-		}
-
 		.section-header {
 			grid-area: header;
 			font-size: var(--text-lg);
@@ -218,39 +205,8 @@ const projects = (await getCollection("work"))
 			font-size: var(--text-4xl);
 		}
 
-		.with-cta .section-header {
-			justify-self: flex-start;
-			text-align: left;
-		}
-
 		.gallery {
 			grid-area: gallery;
-		}
-
-		.cta {
-			grid-area: cta;
-		}
-	}
-
-	/* ====================================================== */
-
-	.mention-card {
-		display: flex;
-		height: 7rem;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		border: 1px solid var(--gray-800);
-		border-radius: 1.5rem;
-		color: var(--gray-300);
-		background: var(--gradient-subtle);
-		box-shadow: var(--shadow-sm);
-	}
-
-	@media (min-width: 50em) {
-		.mention-card {
-			border-radius: 1.5rem;
-			height: 9.5rem;
 		}
 	}
 </style>
