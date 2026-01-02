@@ -48,8 +48,6 @@ const projects = (await getCollection("work"))
 					<div class="index-header">
 						<img
 							alt="Jan Nothacker smiling with shell glasses in front of a river"
-							width="240"
-							height="310"
 							src="/assets/portrait.jpg"
 						/>
 						<p>
@@ -101,6 +99,27 @@ const projects = (await getCollection("work"))
 		text-align: center;
 	}
 
+	@media (max-width: 770px) {
+		.title {
+			font-size: 4rem;
+		}
+	}
+
+	@media (max-width: 620px) {
+		.title {
+			font-size: 3rem;
+		}
+		.index-header p {
+			font-size: 1.3rem;
+		}
+	}
+
+	@media (max-width: 450px) {
+		.title {
+			font-size: 4rem;
+		}
+	}
+
 	.wave-text i {
 		display: inline-block;
 		animation: wave 2s ease-in-out infinite;
@@ -142,12 +161,27 @@ const projects = (await getCollection("work"))
 		object-fit: cover;
 		object-position: top;
 		border: 6px groove bisque;
+		width: 240px;
+		height: auto;
 	}
 
 	@media (min-width: 50em) {
 		header img {
 			aspect-ratio: 3 / 4;
 			object-fit: cover;
+		}
+	}
+
+	@media (max-width: 450px) {
+		header img {
+			width: 180px;
+			height: auto;
+		}
+
+		header {
+			.index-header p {
+				font-size: 1rem;
+			}
 		}
 	}
 
