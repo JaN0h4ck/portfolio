@@ -30,5 +30,12 @@ let tags = data.tags.join(" ");
 				decoding="async"
 			/>
 		</a>
+		<div class="status-bar">
+			{
+				data.tags
+					.slice(0, 3)
+					.map((item) => <p class="status-bar-field">{item}</p>)
+			}
+		</div>
 	</div>
 </div>
