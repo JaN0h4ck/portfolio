@@ -19,28 +19,21 @@ const lang = getLangFromUrl(Astro.url);
 ---
 
 <html lang={lang}>
-	<div class="window" style="width: 100svw;">
+	<div class="surface">
 		<MainHead title={title} description={description} />
-		<head>
-			<div class="title-bar">
-				<div class="title-bar-text">Jan Nothackers personal Site</div>
-				<div class="title-bar-controls">
-					<button aria-label="Help"></button>
-				</div>
-			</div>
-		</head>
-		<div class="window-body">
-			<body>
-				<slot />
-				<script>
-					// Add “loaded” class once the document has completely loaded.
-					addEventListener("load", () =>
-						document.documentElement.classList.add("loaded"),
-					);
-				</script>
-			</body>
-			<Footer />
-		</div>
+		<slot />
 	</div>
+	<style>
+		.surface {
+			background-color: beige;
+		}
+	</style>
+	<script>
+		// Add “loaded” class once the document has completely loaded.
+		addEventListener("load", () =>
+			document.documentElement.classList.add("loaded"),
+		);
+	</script>
+
 
 </html>
