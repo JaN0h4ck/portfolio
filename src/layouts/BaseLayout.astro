@@ -23,6 +23,7 @@ const lang = getLangFromUrl(Astro.url);
 <html lang={lang}>
   <meta charset="UTF-8" />
   <div
+    class="containerino"
     style={bgUrl != undefined
       ? `background-image: url(${bgUrl});`
       : `background-color: ${bgColor};`}
@@ -37,6 +38,11 @@ const lang = getLangFromUrl(Astro.url);
       document.documentElement.classList.add("loaded"),
     );
   </script>
+  <style>
+    .containerino {
+      min-height: 100svh;
+    }
+  </style>
 
 
 </html>

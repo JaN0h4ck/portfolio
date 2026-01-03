@@ -11,6 +11,7 @@ tags:
   - Dev
 href: https://jan0h4ck.itch.io/train-menu
 btnText: Play now on itch.io!
+backgroundPath: /assets/backgrounds/train_menu_background.webp
 ---
 
 - Made during the [Main Menu Madness](https://itch.io/jam/main-menu-madness) Game Jams.
