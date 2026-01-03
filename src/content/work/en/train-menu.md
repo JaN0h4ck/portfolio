@@ -1,7 +1,7 @@
 ---
 title: "Train Menu"
 publishDate: 2025-03-25 01:45:00
-img: /src/images/TrainMenu.png
+img: /src/images/TrainMenu.webp
 img_alt: The inside of a Train by Night. It is pixelized and in an 80s videogame aesthetic.
 description: |
   Thank you for Träwelling
