@@ -78,6 +78,12 @@ const { Content } = await page.render();
           }
         </div>
       </div>
+      <div class="status-bar">
+        {
+          page.data.tags &&
+            page.data.tags.map((tag) => <p class="status-bar-field">{tag}</p>)
+        }
+      </div>
     </div>
   </div>
 </BaseLayout>
