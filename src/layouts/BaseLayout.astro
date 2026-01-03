@@ -11,25 +11,26 @@ import "xp.css/dist/XP.css";
 interface Props {
   title?: string | undefined;
   description?: string | undefined;
+  bgUrl?: string | undefined;
+  bgColor?: string | undefined;
 }
 
-const { title, description } = Astro.props;
+const { title, description, bgUrl, bgColor = "beige" } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 ---
 
 <html lang={lang}>
   <meta charset="UTF-8" />
-  <div class="surface">
+  <div
+    style={bgUrl != undefined
+      ? `background-image: url(${bgUrl});`
+      : `background-color: ${bgColor};`}
+  >
     <MainHead title={title} description={description} />
     <slot />
     <Footer />
   </div>
-  <style>
-    .surface {
-      background-color: beige;
-    }
-  </style>
   <script>
     // Add “loaded” class once the document has completely loaded.
     addEventListener("load", () =>
