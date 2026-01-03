@@ -11,6 +11,7 @@ tags:
   - Dev
 href: https://jekdersnek.itch.io/cold-blooded-2077
 btnText: Try it on itch.io!
+backgroundPath: /assets/backgrounds/cold_blooded_background.png
 ---
 
 - Made during the AK Gaming e.V. Summer Game Jam 2024
