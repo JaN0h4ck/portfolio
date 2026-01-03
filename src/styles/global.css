@@ -354,3 +354,15 @@ h5 {
   margin: 0 auto;
   max-width: 1024px;
 }
+
+@media (max-width: 1044px) {
+  .custom-container {
+    max-width: 92svw;
+  }
+}
+
+@media (max-width: 500px) {
+  .custom-container {
+    max-width: 95svw;
+  }
+}
