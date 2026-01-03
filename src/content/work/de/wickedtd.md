@@ -6,14 +6,15 @@ img_alt: A menge Kreaturen laufen auf einem Pfad und werden von Türmen angegrif
 description: |
   Das erste mal Game Jam
 tags:
+  - "2023"
   - GameDev
   - Game Jam
-  - Dev
+  - Unity
 href: https://jan0h4ck.itch.io/wickedtd
 btnText: Jetzt spielen auf itch.io!
 ---
 
-- Game Jam Projekt während Brackeys Game Jam 2023.1
+- Game Jam **Gruppenprojekt** während Brackeys Game Jam 2023.1
 - Tower Defense Spiel
 - Engine: Unity
-- Meine Aufgaben: Programmieren, QA und Integration Management
+- **Meine Aufgaben**: Programmieren, QA und Integration Management

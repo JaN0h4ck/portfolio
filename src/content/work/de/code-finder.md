@@ -6,15 +6,16 @@ img_alt: Eine Tabelle um Bauteilnummern zu finden.
 description: |
   Schnelle Suche
 tags:
+  - "2024"
   - WebDev
-  - Work
-  - Dev
+  - Arbeit
+  - React
 href: https://github.com/Cloudwerk/neutralinojs-vite-react-ts
 btnText: Neutralino Template ausprobieren!
 ---
 
-- Kundenprojekt während meiner Anstellung bei CloudWerk GmbH.
+- Kundenprojekt während meiner Anstellung bei CloudWerk GmbH in 2024.
 - Einfache Anwendung, die dabei hilft schnell Bauteilnummern zu finden.
 - Gebaut mit Neutralino, React, TS und Vite.
-- Komplett von mir programmiert.
+- Frontend komplett von mir programmiert.
 - Ein Neutralino Template ist daraus entstanden.

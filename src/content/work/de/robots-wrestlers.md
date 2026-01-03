@@ -6,14 +6,15 @@ img_alt: Ein Roboter steht vor fliegenden Plattformen.
 description: |
   AAAA
 tags:
+  - "2024"
   - GameDev
   - Game Jam
-  - Dev
+  - Godot
 href: https://jan0h4ck.itch.io/robotsvswrestlers
 btnText: Jetzt spielen auf itch.io!
 ---
 
-- Game Jam Projekt während des ManaSoup Game Jam 3 im Frühling 2024
+- Game Jam *Gruppenprojekt* während des ManaSoup Game Jam 3 im Frühling 2024
 - 3D Jump & Run Spiel
 - Engine: Godot
-- Meine Aufgaben: Programmieren (.NET), Movement, Pausieren, UI, Animation State Machine
+- **Meine Aufgaben**: Programmieren (.NET), Movement, Pausieren, UI, Animation State Machine
