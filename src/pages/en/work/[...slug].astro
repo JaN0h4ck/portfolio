@@ -55,7 +55,7 @@ const { Content } = await page.render();
       <div class="window-body">
         {
           page.data.img && page.data.href ? (
-            <a href={page.data.href}>
+            <a href={page.data.href} target="_blank">
               <Image src={page.data.img} alt={page.data.img_alt || ""} />
             </a>
           ) : (
