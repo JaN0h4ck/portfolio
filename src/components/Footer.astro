@@ -1,6 +1,5 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import Icon from "./Icon.astro";
 import LanguagePicker from "./LanguagePicker.astro";
 const currentYear = new Date().getFullYear();
 const lang = getLangFromUrl(Astro.url);
@@ -8,17 +7,15 @@ const t = useTranslations(lang);
 ---
 
 <footer>
-	<div class="status-bar">
-		<p class="status-bar-field">&copy; {currentYear} Jan Nothacker</p>
-		<LanguagePicker />
-		<p class="status-bar-field socials">
-			<a href="https://linklist.jan-nothacker.de/"> Linklist</a>
-			<a href="https://jan0h4ck.itch.io/"> Itch</a>
-			<a
-				href="https://www.linkedin.com/in/jan-robert-nothacker-0a7b43264/"
-			>
-				Linkedin</a
-			>
-		</p>
-	</div>
+  <div class="status-bar">
+    <p class="status-bar-field">&copy; {currentYear} Jan Nothacker</p>
+    <LanguagePicker />
+    <p class="status-bar-field socials">
+      <a href="https://linklist.jan-nothacker.de/"> Linklist</a>
+      <a href="https://jan0h4ck.itch.io/"> Itch</a>
+      <a href="https://www.linkedin.com/in/jan-robert-nothacker-0a7b43264/">
+        Linkedin</a
+      >
+    </p>
+  </div>
 </footer>

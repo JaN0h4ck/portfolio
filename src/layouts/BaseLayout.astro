@@ -9,8 +9,8 @@ import { getLangFromUrl } from "../i18n/utils";
 import "xp.css/dist/XP.css";
 
 interface Props {
-	title?: string | undefined;
-	description?: string | undefined;
+  title?: string | undefined;
+  description?: string | undefined;
 }
 
 const { title, description } = Astro.props;
@@ -19,22 +19,23 @@ const lang = getLangFromUrl(Astro.url);
 ---
 
 <html lang={lang}>
-	<div class="surface">
-		<MainHead title={title} description={description} />
-		<slot />
-		<Footer />
-	</div>
-	<style>
-		.surface {
-			background-color: beige;
-		}
-	</style>
-	<script>
-		// Add “loaded” class once the document has completely loaded.
-		addEventListener("load", () =>
-			document.documentElement.classList.add("loaded"),
-		);
-	</script>
+  <meta charset="UTF-8" />
+  <div class="surface">
+    <MainHead title={title} description={description} />
+    <slot />
+    <Footer />
+  </div>
+  <style>
+    .surface {
+      background-color: beige;
+    }
+  </style>
+  <script>
+    // Add “loaded” class once the document has completely loaded.
+    addEventListener("load", () =>
+      document.documentElement.classList.add("loaded"),
+    );
+  </script>
 
 
 </html>
