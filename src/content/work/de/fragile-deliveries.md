@@ -12,7 +12,7 @@ tags:
   - Godot
   - Wwise
 href: https://jan0h4ck.itch.io/fragile-deliveries
-btnText: Play now on itch.io!
+btnText: Jetzt spielen auf itch.io!
 backgroundPath: /assets/backgrounds/fragile_background.webp
 ---
 
