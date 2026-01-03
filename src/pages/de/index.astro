@@ -144,17 +144,24 @@ const uniqueTags = [...new Set(tags)];
   }
   .title {
     text-align: center;
+    font-size: 4.5rem;
   }
 
-  @media (max-width: 770px) {
+  @media (max-width: 1024px) {
     .title {
       font-size: 4rem;
     }
   }
 
+  @media (max-width: 900px) {
+    .title {
+      font-size: 5rem;
+    }
+  }
+
   @media (max-width: 620px) {
     .title {
-      font-size: 3rem;
+      font-size: 4rem;
     }
     .index-header p {
       font-size: 1.3rem;
@@ -163,7 +170,7 @@ const uniqueTags = [...new Set(tags)];
 
   @media (max-width: 450px) {
     .title {
-      font-size: 4rem;
+      font-size: 3rem;
     }
   }
 
