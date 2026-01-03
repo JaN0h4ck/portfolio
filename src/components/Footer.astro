@@ -6,7 +6,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<footer>
+<footer class="custom-container">
   <div class="status-bar">
     <p class="status-bar-field">&copy; {currentYear} Jan Nothacker</p>
     <LanguagePicker />
