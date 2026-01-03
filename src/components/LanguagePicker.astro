@@ -3,22 +3,28 @@ import { languages } from "../i18n/ui";
 ---
 
 <p class="status-bar-field">
-	<select id="langpick" class="select">
-		{
-			Object.entries(languages).map(([lang, label]) => (
-				<option value={lang}>{label}</option>
-			))
-		}
-	</select>
+  <select id="langpick" class="select">
+    {
+      Object.entries(languages).map(([lang, label]) => (
+        <option value={lang}>{label}</option>
+      ))
+    }
+  </select>
 </p>
 
 <script>
-	const langpick = document.querySelector<HTMLSelectElement>("#langpick");
-	const rootElem = document.querySelector("html");
+  const langpick = document.querySelector<HTMLSelectElement>("#langpick");
+  const rootElem = document.querySelector("html");
 
-	langpick.value = rootElem.lang;
-	langpick.addEventListener("change", (ev) => {
-		//@ts-expect-error literally has value
-		window.location.href = `/${ev.target.value}/`;
-	});
+  langpick.value = rootElem.lang;
+  langpick.addEventListener("change", (ev) => {
+    //@ts-expect-error literally has value
+    const targetLang: string = ev.target.value;
+    //thankfully I only have two langs
+    if (targetLang == "de") {
+      window.location.href = window.location.href.replace("/en/", "/de/");
+    } else {
+      window.location.href = window.location.href.replace("/de/", "/en/");
+    }
+  });
 </script>
