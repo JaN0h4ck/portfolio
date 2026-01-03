@@ -6,6 +6,7 @@ img_alt: A website with a navbar and a big picture of a game.
 description: |
   Portfolio website written in React with Typescript.
 tags:
+  - "2024"
   - WebDev
   - Hobby Project
   - React

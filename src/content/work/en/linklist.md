@@ -6,9 +6,9 @@ img_alt: A website with a list of links.
 description: |
   A simple Linktree clone with plain HTML, CSS and JS.
 tags:
+  - "2024"
   - WebDev
   - Hobby Project
-  - Dev
 href: https://linklist.jan-nothacker.de/
 btnText: Check it out
 ---

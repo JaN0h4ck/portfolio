@@ -5,252 +5,247 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 // Component Imports
-import CallToAction from "../../components/CallToAction.astro";
-import Grid from "../../components/Grid.astro";
-import Hero from "../../components/Hero.astro";
-import Icon from "../../components/Icon.astro";
-import Pill from "../../components/Pill.astro";
 import PortfolioPreview from "../../components/PortfolioPreview.astro";
 
 // Page section components
-import ContactCTA from "../../components/ContactCTA.astro";
-import Skills from "../../components/Skills.astro";
 import { getLangFromUrl } from "../../i18n/utils";
+import BlogFilter from "../../components/BlogFilter.astro";
 
 const lang = getLangFromUrl(Astro.url);
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection("work"))
-	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-	.filter((value) => value.filePath.includes(`/${lang}/`))
-	.slice(0, 4);
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .filter((value) => value.filePath.includes(`/${lang}/`));
+const tags = projects.flatMap((p) => p.data.tags);
+const uniqueTags = [...new Set(tags)];
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
 
-<BaseLayout>
-	<div class="stack gap-20 lg:gap-48">
-		<div class="wrapper stack gap-8 lg:gap-20">
-			<header class="hero">
-				<Hero
-					title="Hello, my name is Jan Nothacker"
-					tagline="I am a Web and Game Developer who is currently based in Kempten, Germany."
-					align="start"
-				>
-					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> WebDev</Pill>
-						<Pill><Icon icon="trophy" size="1.33em" /> GameDev</Pill>
-						<Pill><Icon icon="graduation-cap" size="1.33em" /> Scholarship Holder</Pill>
-					</div>
-				</Hero>
-
-				<img
-					alt="Jan Nothacker smiling with shell glasses in front of a river"
-					width="480"
-					height="620"
-					src="/assets/portrait.jpg"
-				/>
-			</header>
-
-			<Skills />
-		</div>
-
-		<main class="wrapper stack gap-20 lg:gap-48">
-			<section class="section with-background with-cta">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Selected Work</h3>
-					<p>Take a look below at some of my games from the past few years.</p>
-				</header>
-
-				<div class="gallery">
-					<Grid variant="offset">
-						{
-							projects.map((project) => (
-								<li>
-									<PortfolioPreview project={project} isGrid />
-								</li>
-							))
-						}
-					</Grid>
-				</div>
-
-				<div class="cta">
-					<CallToAction href="work/">
-						View All
-						<Icon icon="arrow-right" size="1.2em" />
-					</CallToAction>
-				</div>
-			</section>
-
-			<!-- <section class="section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Mentions</h3>
-					<p>
-						I have been fortunate enough to receive praise for my work in several publications. Take a look below to
-						learn more.
-					</p>
-				</header>
-
-				<div class="gallery">
-					<Grid variant="small">
-						{
-							["Medium", "BuzzFeed", "The Next Web", "awwwards.", "TechCrunch"].map((brand) => (
-								<li class="mention-card">
-									<p>{brand}</p>
-								</li>
-							))
-						}
-					</Grid>
-				</div>
-			</section> -->
-		</main>
-
-		<ContactCTA />
-	</div>
+<BaseLayout
+  title="Jans personal Site"
+  description="Personal website of Jan Nothacker, only for personal stuff"
+  bgUrl="/assets/backgrounds/bigbg.webp"
+>
+  <div class="custom-container">
+    <header>
+      <div class="window">
+        <div class="title-bar">
+          <div class="title-bar-text">Header.exe</div>
+          <div class="title-bar-controls">
+            <button aria-label="Maximize" disabled></button>
+            <button aria-label="Restore" disabled></button>
+            <button aria-label="Close" disabled></button>
+          </div>
+        </div>
+        <div class="window-body">
+          <h1 class="title">
+            Welcome to <span class="wave-text"
+              ><i>m</i><i style="margin-right: 1rem;">y</i><i>s</i><i>i</i><i
+                >t</i
+              ><i>e</i></span
+            >
+          </h1>
+          <div class="index-header">
+            <img
+              alt="Jan Nothacker smiling with shell glasses in front of a river"
+              src="/assets/portrait.jpg"
+            />
+            <p>
+              I show my different <b>GameDev</b> and <b>WebDev</b> projects from Uni,
+              Work, Hobbies and GameJams here. I <i>try</i> to update it regularly,
+              but can't always keep up. Anyways: scroll down and enjoy!
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="window">
+        <div class="title-bar">
+          <div class="title-bar-text">Projects.exe</div>
+          <div class="title-bar-controls">
+            <button aria-label="Maximize" disabled></button>
+            <button aria-label="Restore" disabled></button>
+            <button aria-label="Close" disabled></button>
+          </div>
+        </div>
+        <div class="window-body">
+          <div class="flex justify-content-center gap-2">
+            Filter:
+            <div
+              class="flex flex-wrap gap-2 mb-2"
+              id="tags"
+              data-tags={uniqueTags}
+            >
+              <BlogFilter tag="All" />{
+                uniqueTags.map((tag) => <BlogFilter {tag} />)
+              }
+            </div>
+          </div>
+          <section>
+            <div class="gallery">
+              {/* <Grid variant="offset">*/}
+              <div id="newthingy">
+                {
+                  projects.map((project) => (
+                    <PortfolioPreview project={project} isGrid />
+                  ))
+                }
+              </div>
+              {/* </Grid>*/}
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
 </BaseLayout>
 
+<script>
+  function hideBlogs(evt) {
+    let selectedTag = evt.currentTarget.getAttribute("data-type");
+    let tagElement = document.querySelector<HTMLDivElement>("#tags");
+    let tags = tagElement.dataset.tags.split(",");
+    // tags = tags.split(",");
+    tags.splice(tags.indexOf(selectedTag), 1);
+
+    tags.forEach((t) => {
+      const elementsToHide = document.getElementsByClassName(
+        t,
+      ) as HTMLCollectionOf<HTMLAnchorElement>;
+      for (let i = 0; i < elementsToHide.length; i++) {
+        // elementsToHide[i].style.display = "none";
+        elementsToHide[i].classList.add("hidden");
+      }
+    });
+
+    let elementsToShow = document.getElementsByClassName(
+      selectedTag,
+    ) as HTMLCollectionOf<HTMLAnchorElement>;
+    for (let i = 0; i < elementsToShow.length; i++) {
+      // elementsToShow[i].style.display = "grid";
+      elementsToShow[i].classList.remove("hidden");
+    }
+  }
+
+  // Event listener for the button click
+  const input = document.querySelectorAll("#blogFilter");
+  input.forEach((e) => {
+    e.addEventListener("click", hideBlogs);
+  });
+</script>
+
 <style>
-	.hero {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 2rem;
-	}
+  #newthingy {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-around;
+  }
+  .title {
+    text-align: center;
+  }
 
-	.roles {
-		display: none;
-	}
+  @media (max-width: 770px) {
+    .title {
+      font-size: 4rem;
+    }
+  }
 
-	.hero img {
-		aspect-ratio: 5 / 4;
-		object-fit: cover;
-		object-position: top;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-	}
+  @media (max-width: 620px) {
+    .title {
+      font-size: 3rem;
+    }
+    .index-header p {
+      font-size: 1.3rem;
+    }
+  }
 
-	@media (min-width: 50em) {
-		.hero {
-			display: grid;
-			grid-template-columns: 6fr 4fr;
-			padding-inline: 2.5rem;
-			gap: 3.75rem;
-		}
+  @media (max-width: 450px) {
+    .title {
+      font-size: 4rem;
+    }
+  }
 
-		.roles {
-			margin-top: 0.5rem;
-			display: flex;
-			gap: 0.5rem;
-		}
+  .wave-text i {
+    display: inline-block;
+    animation: wave 2s ease-in-out infinite;
+  }
 
-		.hero img {
-			aspect-ratio: 3 / 4;
-			border-radius: 4.5rem;
-			object-fit: cover;
-		}
-	}
+  .wave-text i:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .wave-text i:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .wave-text i:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  .wave-text i:nth-child(4) {
+    animation-delay: 0.6s;
+  }
 
-	/* ====================================================== */
+  .wave-text i:nth-child(5) {
+    animation-delay: 0.8s;
+  }
 
-	.section {
-		display: grid;
-		gap: 2rem;
-	}
+  .wave-text i:nth-child(6) {
+    animation-delay: 1s;
+  }
 
-	.with-background {
-		position: relative;
-	}
+  @keyframes wave {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
 
-	.with-background::before {
-		--hero-bg: var(--bg-image-subtle-2);
+  header img {
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    object-position: top;
+    border: 6px groove bisque;
+    width: 240px;
+    height: auto;
+  }
 
-		content: "";
-		position: absolute;
-		pointer-events: none;
-		left: 50%;
-		width: 100vw;
-		aspect-ratio: calc(2.25 / var(--bg-scale));
-		top: 0;
-		transform: translateY(-75%) translateX(-50%);
-		background:
-			url("/assets/backgrounds/noise.png") top center/220px repeat,
-			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
-			var(--gray-999);
-		background-blend-mode: overlay, normal, normal, normal;
-		mix-blend-mode: var(--bg-blend-mode);
-		z-index: -1;
-	}
+  @media (min-width: 50em) {
+    header img {
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+    }
+  }
 
-	.with-background.bg-variant::before {
-		--hero-bg: var(--bg-image-subtle-1);
-	}
+  @media (max-width: 450px) {
+    header img {
+      width: 180px;
+      height: auto;
+    }
 
-	.section-header {
-		justify-self: center;
-		text-align: center;
-		max-width: 50ch;
-		font-size: var(--text-md);
-		color: var(--gray-300);
-	}
+    header {
+      .index-header p {
+        font-size: 1rem;
+      }
+    }
+  }
 
-	.section-header h3 {
-		font-size: var(--text-2xl);
-	}
+  .index-header {
+    display: flex;
+    margin: 1rem;
 
-	@media (min-width: 50em) {
-		.section {
-			grid-template-columns: repeat(4, 1fr);
-			grid-template-areas: "header header header header" "gallery gallery gallery gallery";
-			gap: 5rem;
-		}
+    p {
+      margin-left: 1rem;
+      font-size: 1.5rem;
+    }
+  }
 
-		.section.with-cta {
-			grid-template-areas: "header header header cta" "gallery gallery gallery gallery";
-		}
-
-		.section-header {
-			grid-area: header;
-			font-size: var(--text-lg);
-		}
-
-		.section-header h3 {
-			font-size: var(--text-4xl);
-		}
-
-		.with-cta .section-header {
-			justify-self: flex-start;
-			text-align: left;
-		}
-
-		.gallery {
-			grid-area: gallery;
-		}
-
-		.cta {
-			grid-area: cta;
-		}
-	}
-
-	/* ====================================================== */
-
-	.mention-card {
-		display: flex;
-		height: 7rem;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		border: 1px solid var(--gray-800);
-		border-radius: 1.5rem;
-		color: var(--gray-300);
-		background: var(--gradient-subtle);
-		box-shadow: var(--shadow-sm);
-	}
-
-	@media (min-width: 50em) {
-		.mention-card {
-			border-radius: 1.5rem;
-			height: 9.5rem;
-		}
-	}
+  header {
+    margin-bottom: 1rem;
+  }
 </style>

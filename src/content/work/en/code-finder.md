@@ -6,16 +6,17 @@ img_alt: A Table for finding part codes.
 description: |
   Quick Search
 tags:
+  - "2024"
   - WebDev
   - Work
-  - Dev
+  - React
 href: https://github.com/Cloudwerk/neutralinojs-vite-react-ts
 btnText: See the neutralino template!
 ---
 
-- Made during work at CloudwerkGmbH
+- Made as part of work at CloudwerkGmbH in 2024
 - Simple Application that helps to quickly find part numbers
 - Built using Neutralino, React, TS and Vite
 - Custom project made for a customer
-- Completely built by me
+- Frontend completely built by me
 - Spinned of a Neutralino template from the project

@@ -6,14 +6,15 @@ img_alt: A bunch of creatures walking along a path while being attacked by tower
 description: |
   My first Gamejam Game
 tags:
+  - "2023"
   - GameDev
   - Game Jam
-  - Dev
+  - Unity
 href: https://jan0h4ck.itch.io/wickedtd
 btnText: Try it on itch.io!
 ---
 
-- Game Jam project during Brackeys Game Jam 2023.1
+- Game Jam *group project* during Brackeys Game Jam 2023.1
 - Tower Defense Game
 - Engine: Unity
-- My Role: Programmer, QA and Integration Management
+- **My Tasks**: Programming, QA and Integration Management
