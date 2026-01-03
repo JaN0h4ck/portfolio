@@ -15,8 +15,8 @@ const lang = getLangFromUrl(Astro.url);
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection("work"))
-	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-	.filter((value) => value.filePath.includes(`/${lang}/`));
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .filter((value) => value.filePath.includes(`/${lang}/`));
 const tags = projects.flatMap((p) => p.data.tags);
 const uniqueTags = [...new Set(tags)];
 
@@ -25,230 +25,227 @@ const uniqueTags = [...new Set(tags)];
 ---
 
 <BaseLayout
-	title="Jans personal Site"
-	description="Personal website of Jan Nothacker, only for personal stuff"
+  title="Jans personal Site"
+  description="Personal website of Jan Nothacker, only for personal stuff"
+  bgUrl="/assets/backgrounds/bigbg.webp"
 >
-	<div class="custom-container">
-		<header>
-			<div class="window">
-				<div class="title-bar">
-					<div class="title-bar-text">Header.exe</div>
-					<div class="title-bar-controls">
-						<button aria-label="Maximize" disabled></button>
-						<button aria-label="Restore" disabled></button>
-						<button aria-label="Close" disabled></button>
-					</div>
-				</div>
-				<div class="window-body">
-					<h1 class="title">
-						Welcome to <span class="wave-text"
-							><i>m</i><i style="margin-right: 1rem;">y</i><i>s</i
-							><i>i</i><i>t</i><i>e</i></span
-						>
-					</h1>
-					<div class="index-header">
-						<img
-							alt="Jan Nothacker smiling with shell glasses in front of a river"
-							src="/assets/portrait.jpg"
-						/>
-						<p>
-							I show my different <b>GameDev</b> and <b>WebDev</b> projects
-							from Uni, Work, Hobbies and GameJams here. I <i
-								>try</i
-							> to update it regularly, but can't always keep up. Anyways:
-							scroll down and enjoy!
-						</p>
-					</div>
-				</div>
-			</div>
-		</header>
-		<main>
-			<div class="window">
-				<div class="title-bar">
-					<div class="title-bar-text">Projects.exe</div>
-					<div class="title-bar-controls">
-						<button aria-label="Maximize" disabled></button>
-						<button aria-label="Restore" disabled></button>
-						<button aria-label="Close" disabled></button>
-					</div>
-				</div>
-				<div class="window-body">
-					<div class="flex justify-content-center gap-2">
-						Filter:
-						<div
-							class="flex flex-wrap gap-2 mb-2"
-							id="tags"
-							data-tags={uniqueTags}
-						>
-							<BlogFilter tag="All" />{
-								uniqueTags.map((tag) => <BlogFilter {tag} />)
-							}
-						</div>
-					</div>
-					<section>
-						<div class="gallery">
-							{/* <Grid variant="offset">*/}
-							<div id="newthingy">
-								{
-									projects.map((project) => (
-										<PortfolioPreview
-											project={project}
-											isGrid
-										/>
-									))
-								}
-							</div>
-							{/* </Grid>*/}
-						</div>
-					</section>
-				</div>
-			</div>
-		</main>
-	</div>
+  <div class="custom-container">
+    <header>
+      <div class="window">
+        <div class="title-bar">
+          <div class="title-bar-text">Header.exe</div>
+          <div class="title-bar-controls">
+            <button aria-label="Maximize" disabled></button>
+            <button aria-label="Restore" disabled></button>
+            <button aria-label="Close" disabled></button>
+          </div>
+        </div>
+        <div class="window-body">
+          <h1 class="title">
+            Welcome to <span class="wave-text"
+              ><i>m</i><i style="margin-right: 1rem;">y</i><i>s</i><i>i</i><i
+                >t</i
+              ><i>e</i></span
+            >
+          </h1>
+          <div class="index-header">
+            <img
+              alt="Jan Nothacker smiling with shell glasses in front of a river"
+              src="/assets/portrait.jpg"
+            />
+            <p>
+              I show my different <b>GameDev</b> and <b>WebDev</b> projects from Uni,
+              Work, Hobbies and GameJams here. I <i>try</i> to update it regularly,
+              but can't always keep up. Anyways: scroll down and enjoy!
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="window">
+        <div class="title-bar">
+          <div class="title-bar-text">Projects.exe</div>
+          <div class="title-bar-controls">
+            <button aria-label="Maximize" disabled></button>
+            <button aria-label="Restore" disabled></button>
+            <button aria-label="Close" disabled></button>
+          </div>
+        </div>
+        <div class="window-body">
+          <div class="flex justify-content-center gap-2">
+            Filter:
+            <div
+              class="flex flex-wrap gap-2 mb-2"
+              id="tags"
+              data-tags={uniqueTags}
+            >
+              <BlogFilter tag="All" />{
+                uniqueTags.map((tag) => <BlogFilter {tag} />)
+              }
+            </div>
+          </div>
+          <section>
+            <div class="gallery">
+              {/* <Grid variant="offset">*/}
+              <div id="newthingy">
+                {
+                  projects.map((project) => (
+                    <PortfolioPreview project={project} isGrid />
+                  ))
+                }
+              </div>
+              {/* </Grid>*/}
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
 </BaseLayout>
 
 <script>
-	function hideBlogs(evt) {
-		let selectedTag = evt.currentTarget.getAttribute("data-type");
-		let tagElement = document.querySelector<HTMLDivElement>("#tags");
-		let tags = tagElement.dataset.tags.split(",");
-		// tags = tags.split(",");
-		tags.splice(tags.indexOf(selectedTag), 1);
+  function hideBlogs(evt) {
+    let selectedTag = evt.currentTarget.getAttribute("data-type");
+    let tagElement = document.querySelector<HTMLDivElement>("#tags");
+    let tags = tagElement.dataset.tags.split(",");
+    // tags = tags.split(",");
+    tags.splice(tags.indexOf(selectedTag), 1);
 
-		tags.forEach((t) => {
-			const elementsToHide = document.getElementsByClassName(
-				t,
-			) as HTMLCollectionOf<HTMLAnchorElement>;
-			for (let i = 0; i < elementsToHide.length; i++) {
-				// elementsToHide[i].style.display = "none";
-				elementsToHide[i].classList.add("hidden");
-			}
-		});
+    tags.forEach((t) => {
+      const elementsToHide = document.getElementsByClassName(
+        t,
+      ) as HTMLCollectionOf<HTMLAnchorElement>;
+      for (let i = 0; i < elementsToHide.length; i++) {
+        // elementsToHide[i].style.display = "none";
+        elementsToHide[i].classList.add("hidden");
+      }
+    });
 
-		let elementsToShow = document.getElementsByClassName(
-			selectedTag,
-		) as HTMLCollectionOf<HTMLAnchorElement>;
-		for (let i = 0; i < elementsToShow.length; i++) {
-			// elementsToShow[i].style.display = "grid";
-			elementsToShow[i].classList.remove("hidden");
-		}
-	}
+    let elementsToShow = document.getElementsByClassName(
+      selectedTag,
+    ) as HTMLCollectionOf<HTMLAnchorElement>;
+    for (let i = 0; i < elementsToShow.length; i++) {
+      // elementsToShow[i].style.display = "grid";
+      elementsToShow[i].classList.remove("hidden");
+    }
+  }
 
-	// Event listener for the button click
-	const input = document.querySelectorAll("#blogFilter");
-	input.forEach((e) => {
-		e.addEventListener("click", hideBlogs);
-	});
+  // Event listener for the button click
+  const input = document.querySelectorAll("#blogFilter");
+  input.forEach((e) => {
+    e.addEventListener("click", hideBlogs);
+  });
 </script>
 
 <style>
-	#newthingy {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 1rem;
-		justify-content: space-around;
-	}
-	.title {
-		text-align: center;
-	}
+  #newthingy {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-around;
+  }
+  .title {
+    text-align: center;
+  }
 
-	@media (max-width: 770px) {
-		.title {
-			font-size: 4rem;
-		}
-	}
+  @media (max-width: 770px) {
+    .title {
+      font-size: 4rem;
+    }
+  }
 
-	@media (max-width: 620px) {
-		.title {
-			font-size: 3rem;
-		}
-		.index-header p {
-			font-size: 1.3rem;
-		}
-	}
+  @media (max-width: 620px) {
+    .title {
+      font-size: 3rem;
+    }
+    .index-header p {
+      font-size: 1.3rem;
+    }
+  }
 
-	@media (max-width: 450px) {
-		.title {
-			font-size: 4rem;
-		}
-	}
+  @media (max-width: 450px) {
+    .title {
+      font-size: 4rem;
+    }
+  }
 
-	.wave-text i {
-		display: inline-block;
-		animation: wave 2s ease-in-out infinite;
-	}
+  .wave-text i {
+    display: inline-block;
+    animation: wave 2s ease-in-out infinite;
+  }
 
-	.wave-text i:nth-child(1) {
-		animation-delay: 0s;
-	}
-	.wave-text i:nth-child(2) {
-		animation-delay: 0.2s;
-	}
-	.wave-text i:nth-child(3) {
-		animation-delay: 0.4s;
-	}
-	.wave-text i:nth-child(4) {
-		animation-delay: 0.6s;
-	}
+  .wave-text i:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .wave-text i:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .wave-text i:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  .wave-text i:nth-child(4) {
+    animation-delay: 0.6s;
+  }
 
-	.wave-text i:nth-child(5) {
-		animation-delay: 0.8s;
-	}
+  .wave-text i:nth-child(5) {
+    animation-delay: 0.8s;
+  }
 
-	.wave-text i:nth-child(6) {
-		animation-delay: 1s;
-	}
+  .wave-text i:nth-child(6) {
+    animation-delay: 1s;
+  }
 
-	@keyframes wave {
-		0%,
-		100% {
-			transform: translateY(0);
-		}
-		50% {
-			transform: translateY(-20px);
-		}
-	}
+  @keyframes wave {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
 
-	header img {
-		aspect-ratio: 5 / 4;
-		object-fit: cover;
-		object-position: top;
-		border: 6px groove bisque;
-		width: 240px;
-		height: auto;
-	}
+  header img {
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    object-position: top;
+    border: 6px groove bisque;
+    width: 240px;
+    height: auto;
+  }
 
-	@media (min-width: 50em) {
-		header img {
-			aspect-ratio: 3 / 4;
-			object-fit: cover;
-		}
-	}
+  @media (min-width: 50em) {
+    header img {
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+    }
+  }
 
-	@media (max-width: 450px) {
-		header img {
-			width: 180px;
-			height: auto;
-		}
+  @media (max-width: 450px) {
+    header img {
+      width: 180px;
+      height: auto;
+    }
 
-		header {
-			.index-header p {
-				font-size: 1rem;
-			}
-		}
-	}
+    header {
+      .index-header p {
+        font-size: 1rem;
+      }
+    }
+  }
 
-	.index-header {
-		display: flex;
-		margin: 1rem;
+  .index-header {
+    display: flex;
+    margin: 1rem;
 
-		p {
-			margin-left: 1rem;
-			font-size: 1.5rem;
-		}
-	}
+    p {
+      margin-left: 1rem;
+      font-size: 1.5rem;
+    }
+  }
 
-	header {
-		margin-bottom: 1rem;
-	}
+  header {
+    margin-bottom: 1rem;
+  }
 </style>
