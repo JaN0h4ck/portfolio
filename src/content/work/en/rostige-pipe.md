@@ -11,6 +11,8 @@ tags:
   - Dev
 href: https://jan0h4ck.itch.io/rostige-pipe
 btnText: Try it on itch.io!
+backgroundPath: /assets/backgrounds/pipe_bg.png
+bgTile: true
 ---
 
 - Graded group project as part of my studies

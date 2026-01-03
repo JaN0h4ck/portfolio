@@ -13,9 +13,16 @@ interface Props {
   description?: string | undefined;
   bgUrl?: string | undefined;
   bgColor?: string | undefined;
+  bgTile?: boolean | undefined;
 }
 
-const { title, description, bgUrl, bgColor = "beige" } = Astro.props;
+const {
+  title,
+  description,
+  bgUrl,
+  bgColor = "beige",
+  bgTile = false,
+} = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 ---
@@ -24,9 +31,10 @@ const lang = getLangFromUrl(Astro.url);
   <meta charset="UTF-8" />
   <div
     class="containerino"
-    style={bgUrl != undefined
+    style={(bgUrl != undefined
       ? `background-image: url(${bgUrl});`
-      : `background-color: ${bgColor};`}
+      : `background-color: ${bgColor};`) +
+      (bgTile ? "" : "background-size: cover;")}
   >
     <MainHead title={title} description={description} />
     <slot />
@@ -41,7 +49,6 @@ const lang = getLangFromUrl(Astro.url);
   <style>
     .containerino {
       min-height: 100svh;
-      background-size: cover;
     }
   </style>
 
