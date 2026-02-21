@@ -353,6 +353,7 @@ h5 {
 .custom-container {
   margin: 0 auto;
   max-width: 1024px;
+  padding-top: 2rem;
 }
 
 @media (max-width: 1044px) {
