@@ -8,7 +8,7 @@ interface Props {
 	isGrid?: boolean;
 }
 
-const [lang, ...slugArr] = Astro.props.project.slug.split("/");
+const [lang, ...slugArr] = Astro.props.project.id.split("/"); //id is the same as slug now? sure
 const url = getRelativeLocaleUrl(lang, `work/${slugArr.join("/")}`);
 const { data } = Astro.props.project;
 const { isGrid } = Astro.props;
@@ -23,19 +23,10 @@ let tags = data.tags.join(" ");
 	</div>
 	<div class="window-body showcase">
 		<a class=`card ${isGrid ? "card-grid" : ""}` href={url}>
-			<Image
-				src={data.img}
-				alt={data.img_alt || ""}
-				loading="lazy"
-				decoding="async"
-			/>
+			<Image src={data.img} alt={data.img_alt || ""} loading="lazy" decoding="async" />
 		</a>
 		<div class="status-bar">
-			{
-				data.tags
-					.slice(0, 3)
-					.map((item) => <p class="status-bar-field">{item}</p>)
-			}
+			{data.tags.slice(0, 3).map((item) => <p class="status-bar-field">{item}</p>)}
 		</div>
 	</div>
 </div>
