@@ -11,7 +11,7 @@ tags:
   - Game Jam
   - Godot
 href: https://jan0h4ck.itch.io/doors
-btnText: Play now on itch.io!
+btnText: Jetzt auf itch.io Spielen!
 backgroundPath: /assets/backgrounds/doors_background.png
 ---
 
