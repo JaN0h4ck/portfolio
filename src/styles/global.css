@@ -340,6 +340,10 @@ h1.title {
   border: 4px inset orange;
 }
 
+.flex-align-center {
+  align-items: center;
+}
+
 @media (min-width: 50em) {
   .card {
     height: 22rem;

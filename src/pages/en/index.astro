@@ -58,9 +58,9 @@ const uniqueTags = [...new Set(tags)];
 					<div class="title-bar-text">Projects.exe</div>
 				</div>
 				<div class="window-body">
-					<div class="flex justify-content-center gap-2">
+					<div class="flex justify-content-center flex-align-center gap-2 mb-2">
 						Filter:
-						<div class="flex flex-wrap gap-2 mb-2" id="tags" data-tags={uniqueTags}>
+						<div class="flex flex-wrap gap-2" id="tags" data-tags={uniqueTags}>
 							<BlogFilter tag="All" /><BlogFilter tag="GameDev" /><BlogFilter tag="WebDev" />
 						</div>
 					</div>
