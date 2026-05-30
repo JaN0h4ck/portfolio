@@ -236,6 +236,10 @@ h5 {
   margin-bottom: 2rem;
 }
 
+.mt-1 {
+  margin-top: 1rem;
+}
+
 h1.title {
   padding: .75rem .5rem;
 
@@ -342,6 +346,15 @@ h1.title {
 
 .flex-align-center {
   align-items: center;
+}
+
+#filter-container {
+  font-size: .8rem;
+  
+  .blog-filter {
+    font-size: .8rem;
+    padding: .35rem .5rem;
+  }
 }
 
 @media (min-width: 50em) {
