@@ -9,48 +9,40 @@ import { getLangFromUrl } from "../i18n/utils";
 import "xp.css/dist/XP.css";
 
 interface Props {
-  title?: string | undefined;
-  description?: string | undefined;
-  bgUrl?: string | undefined;
-  bgColor?: string | undefined;
-  bgTile?: boolean | undefined;
+	title?: string | undefined;
+	description?: string | undefined;
+	bgUrl?: string | undefined;
+	bgColor?: string | undefined;
+	bgTile?: boolean | undefined;
 }
 
-const {
-  title,
-  description,
-  bgUrl,
-  bgColor = "beige",
-  bgTile = false,
-} = Astro.props;
+const { title, description, bgUrl, bgColor = "beige", bgTile = false } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 ---
 
 <html lang={lang}>
-  <meta charset="UTF-8" />
-  <div
-    class="containerino"
-    style={(bgUrl != undefined
-      ? `background-image: url(${bgUrl});`
-      : `background-color: ${bgColor};`) +
-      (bgTile ? "" : "background-size: cover;")}
-  >
-    <MainHead title={title} description={description} />
-    <slot />
-    <Footer />
-  </div>
-  <script>
-    // Add “loaded” class once the document has completely loaded.
-    addEventListener("load", () =>
-      document.documentElement.classList.add("loaded"),
-    );
-  </script>
-  <style>
-    .containerino {
-      min-height: 100svh;
-    }
-  </style>
+	<meta charset="UTF-8" />
+	<div
+		class="containerino"
+		id="main-container"
+		style={(bgUrl != undefined
+			? `background-image: url(${bgUrl});`
+			: `background-image: url("/assets/backgrounds/bigbg.webp");`) + (bgTile ? "" : "background-size: cover;")}
+	>
+		<MainHead title={title} description={description} />
+		<slot />
+		<Footer />
+	</div>
+	<script>
+		// Add “loaded” class once the document has completely loaded.
+		addEventListener("load", () => document.documentElement.classList.add("loaded"));
+	</script>
+	<style>
+		.containerino {
+			min-height: 100svh;
+		}
+	</style>
 
 
 </html>

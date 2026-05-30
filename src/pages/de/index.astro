@@ -40,7 +40,7 @@ const uniqueTags = [...new Set(tags)];
 						Wilkommen auf meiner <span class="wave-text"><i>S</i><i>e</i><i>i</i><i>t</i><i>e</i></span>
 					</h1>
 					<div class="index-header">
-						<img alt="Jan Nothacker smiling with shell glasses in front of a river" src="/assets/portrait.jpg" />
+						<img alt="Jan Nothacker smiling with shell glasses in front of a river" src="/assets/portrait.webp" />
 						<p>
 							Ich zeige hier verschiedene <b>GameDev</b> und <b>WebDev</b> Projekte aus dem Studium, Arbeit, Hobbies und Gamejams.
 							Ich <i>versuche</i> es regelmäßig upzudaten, aber habe nicht immer Zeit. Viel Spaß beim scrollen!
@@ -55,10 +55,10 @@ const uniqueTags = [...new Set(tags)];
 					<div class="title-bar-text">Projekte.exe</div>
 				</div>
 				<div class="window-body">
-					<div class="flex justify-content-center gap-2">
+					<div class="flex justify-content-center flex-align-center gap-2 mb-2 mt-1" id="filter-container">
 						Filter:
-						<div class="flex flex-wrap gap-2 mb-2" id="tags" data-tags={uniqueTags}>
-							<BlogFilter tag="All" />{uniqueTags.map((tag) => <BlogFilter {tag} />)}
+						<div class="flex flex-wrap gap-2" id="tags" data-tags={["All", "GameDev", "WebDev"]}>
+							<BlogFilter tag="All" /><BlogFilter tag="GameDev" /><BlogFilter tag="WebDev" />
 						</div>
 					</div>
 					<section>
@@ -100,7 +100,7 @@ const uniqueTags = [...new Set(tags)];
 	}
 
 	// Event listener for the button click
-	const input = document.querySelectorAll("#blogFilter");
+	const input = document.querySelectorAll(".blog-filter");
 	input.forEach((e) => {
 		e.addEventListener("click", hideBlogs);
 	});
