@@ -15,7 +15,7 @@ btnText: Play now on itch.io!
 backgroundPath: /assets/backgrounds/doors_background.png
 ---
 
-- Im Rahmen des [AK Gaming Game Jam #5](https://itch.io/jam/ak-gaming-game-jam-5) im December of 2025 entstanden.
+- Im Rahmen des [AK Gaming Game Jam #5](https://itch.io/jam/ak-gaming-game-jam-5) im Dezember of 2025 entstanden.
     - **Gewinner** in der "Game Design & Theme" Kategorie.
 - Walking Simulator mit neun verschiedenen Türen.
 - *Teamprojekt* mit Julan42.
