@@ -58,7 +58,7 @@ const uniqueTags = [...new Set(tags)];
 					<div class="flex justify-content-center gap-2">
 						Filter:
 						<div class="flex flex-wrap gap-2 mb-2" id="tags" data-tags={uniqueTags}>
-							<BlogFilter tag="All" />{uniqueTags.map((tag) => <BlogFilter {tag} />)}
+							<BlogFilter tag="All" /><BlogFilter tag="GameDev" /><BlogFilter tag="WebDev" />
 						</div>
 					</div>
 					<section>
