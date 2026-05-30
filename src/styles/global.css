@@ -357,6 +357,10 @@ h1.title {
   }
 }
 
+#main-container {
+  background-attachment: fixed;
+}
+
 @media (min-width: 50em) {
   .card {
     height: 22rem;
